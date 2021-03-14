@@ -165,3 +165,27 @@ class StarterSite extends Timber\Site {
 }
 
 new StarterSite();
+
+// Functions
+require_once( __DIR__ . '/functions/custom-post-types.php' );
+require_once( __DIR__ . '/functions/custom-roles.php' );
+require_once( __DIR__ . '/functions/disable-comments.php' );
+require_once( __DIR__ . '/functions/disable-posts.php' );
+require_once( __DIR__ . '/functions/taxonomy-functions.php' );
+require_once( __DIR__ . '/functions/timber-context.php' );
+
+
+// After WordPress is Loaded
+add_action(
+	'wp_loaded',
+	function () {
+		require_once( __DIR__ . '/functions/acf.php' );
+	},
+	11
+);
+
+// Removes editor from Appearance and Plugin menu
+add_action('_admin_menu', function() {
+  remove_action('admin_menu', '_add_themes_utility_last', 101);
+  remove_submenu_page( 'plugins.php', 'plugin-editor.php' );
+} );

@@ -1,0 +1,31 @@
+// ----------
+// Footer
+// ----------
+
+// Footer Brandbar
+// ------------
+.ut-footer--brand-bar {
+  p {
+    margin-bottom: 0;
+  }
+
+  .ut-footer--required-links {
+    position: relative;
+    right: 0;
+    top: unset;
+  }
+}
+
+// Footer Nav
+// ------------
+footer {
+  nav {
+    li {
+      margin-bottom: 1rem;
+      a,
+      a:link {
+        color: $ut-charcoal;
+      }
+    }
+  }
+}

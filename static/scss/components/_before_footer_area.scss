@@ -1,0 +1,30 @@
+// ----------
+// Before Footer Area
+// ----------
+
+.before-footer-area {
+  background-color: $ut-burntorange;
+  &--cta {
+    &:hover {
+      background-color: $ut-burntorange--s10;
+    }
+  }
+  a {
+    color: $ut-white;
+    text-decoration: none;
+    &.ut-cta-link {
+      font-size: 1.25rem;
+    }
+  }
+  svg {
+    fill: $ut-white;
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+  @media (max-width: 900px) {
+    .ut-img--fluid {
+      height: 100%;
+      max-height: 300px;
+    }
+  }
+}
