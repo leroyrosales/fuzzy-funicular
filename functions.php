@@ -65,6 +65,7 @@ class StarterSite extends Timber\Site {
 		add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
+		add_action( 'init', array( $this, 'emerus_register_nav_menus' ) );
 		parent::__construct();
 	}
 	/** This is where you can register custom post types. */
@@ -76,15 +77,29 @@ class StarterSite extends Timber\Site {
 
 	}
 
+  function emerus_register_nav_menus() {
+    // This is where you register the custom menu LOCATIONS.
+    register_nav_menus(
+      array(
+				'primary_menu' => __( 'Primary Menu', 'border_beagle' ),
+				'footer_menu'  => __( 'Footer Menu', 'border_beagle' ),
+				'second_footer_menu'  => __( 'Second Footer Menu', 'border_beagle' ),
+      )
+    );
+	}
+
 	/** This is where you add some context
 	 *
 	 * @param string $context context['this'] Being the Twig's {{ this }}.
 	 */
 	public function add_to_context( $context ) {
-		$context['foo']   = 'bar';
-		$context['stuff'] = 'I am a value set in your functions.php file';
-		$context['notes'] = 'These values are available everytime you call Timber::context();';
-		$context['menu']  = new Timber\Menu();
+		$context['primary_menu'] = new TimberMenu('primary_menu');
+		if( has_nav_menu( 'footer_menu' ) ) {
+			$context['footer_menu'] = new TimberMenu('footer_menu');
+		}
+		if( has_nav_menu( 'second_footer_menu' ) ) {
+			$context['second_footer_menu'] = new TimberMenu('second_footer_menu');
+		}
 		$context['site']  = $this;
 		return $context;
 	}
