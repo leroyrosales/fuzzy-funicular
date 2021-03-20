@@ -167,11 +167,11 @@ class StarterSite extends Timber\Site {
 new StarterSite();
 
 // Functions
-require_once( __DIR__ . '/functions/custom-post-types.php' );
-require_once( __DIR__ . '/functions/custom-roles.php' );
+// require_once( __DIR__ . '/functions/custom-post-types.php' );
+// require_once( __DIR__ . '/functions/custom-roles.php' );
 require_once( __DIR__ . '/functions/disable-comments.php' );
-require_once( __DIR__ . '/functions/disable-posts.php' );
-require_once( __DIR__ . '/functions/taxonomy-functions.php' );
+// require_once( __DIR__ . '/functions/disable-posts.php' );
+// require_once( __DIR__ . '/functions/taxonomy-functions.php' );
 require_once( __DIR__ . '/functions/timber-context.php' );
 
 
