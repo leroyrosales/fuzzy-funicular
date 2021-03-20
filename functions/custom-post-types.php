@@ -2,9 +2,40 @@
 
 /**
  * Register Post Types
+ * - Slides
  * - CUSTOM POST TYPE
  * WordPress documentation: https://developer.wordpress.org/plugins/post-types/
  */
+// add_action( 'init', function () {
+
+	// Slides
+	register_post_type( 'slide',
+		array(
+			'labels' => array(
+				'name' => 'Slides',
+				'singular_name' => 'Slide',
+				'add_new_item' => 'Add New Slide',
+				'all_items' => 'All Slides',
+				'edit_item' => 'Edit Slide',
+				'new_item' => 'New Slide',
+				'view_item' => 'View Slide',
+				'search_items' => 'Search Slides',
+				'not_found' => 'No Slides found',
+				'not_found_in_trash' => 'No Slides found in Trash',
+			),
+			'rewrite' => false,
+      'public' => true,
+      'publicly_queryable' => false,
+			'menu_position' => 20,
+			'menu_icon' => 'dashicons-sticky',
+			'show_in_nav_menus' => false,
+			'supports' => array(
+				'title',
+				'editor'
+			)
+		)
+	);
+
 
 // add_action( 'init', function () {
 
