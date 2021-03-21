@@ -13,10 +13,10 @@
         </div>
         <div class="col-12 col-md-6 text-md-right">
           {% if header_cta_menu %}
-            {% include "partial/inline-menu.twig" with { 'menu': header_cta_menu.get_items, 'menu_id': 'header-cta-menu' } %}
+            {% include "partial/header-inline-menu.twig" with { 'menu': header_cta_menu.get_items, 'menu_id': 'header-cta-menu' } %}
           {% endif %}
           {% if second_header_menu %}
-            {% include "partial/inline-menu.twig" with { 'menu': second_header_menu.get_items, 'menu_id': 'second-header-menu' } %}
+            {% include "partial/header-inline-menu.twig" with { 'menu': second_header_menu.get_items, 'menu_id': 'second-header-menu' } %}
           {% endif %}
         </div>
       </div>
