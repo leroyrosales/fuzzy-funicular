@@ -12,7 +12,7 @@
         {% endif  %}
         <p>&copy; {{"now"|date('Y')}} <a href="{{ site.url }}" class="font-weight-bold">{{ site.name }}</a> All rights reserved.</p>
         {% if second_footer_menu %}
-          {% include "partial/footer-menu.twig" with { 'menu': second_footer_menu.get_items, 'menu_id': 'second-footer-menu' } %}
+          {% include "partial/inline-menu.twig" with { 'menu': second_footer_menu.get_items, 'menu_id': 'second-footer-menu' } %}
         {% endif %}
       </div>
     </div>
