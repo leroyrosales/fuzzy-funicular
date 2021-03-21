@@ -1,9 +1,9 @@
 <?php
 
 /*
- * 
+ *
  * Taxonomy Custom Functions
- * 
+ *
  */
 
 if ( !current_user_can( 'administrator' ) )  {
@@ -44,18 +44,18 @@ function rudr_add_new_tags_metabox(){
 	$pri = 'default'; // priority, 'default' is good for us
 	add_meta_box( $id, $heading, $callback, $post_type, $position, $pri );
 }
- 
+
 /*
  * Fill metabox with FAQ tags
  */
-function rudr_metabox_content($post) {  
- 
+function rudr_metabox_content($post) {
+
 	// get all blog post tags as an array of objects
-	$all_tags = get_terms( array('taxonomy' => 'post_tag', 'hide_empty' => 0) ); 
- 
+	$all_tags = get_terms( array('taxonomy' => 'post_tag', 'hide_empty' => 0) );
+
 	// get all tags assigned to a post
-	$all_tags_of_post = get_the_terms( $post->ID, 'post_tag' );  
- 
+	$all_tags_of_post = get_the_terms( $post->ID, 'post_tag' );
+
 	// create an array of post tags ids
 	$ids = array();
 	if ( $all_tags_of_post ) {
@@ -63,7 +63,7 @@ function rudr_metabox_content($post) {
 			$ids[] = $tag->term_id;
 		}
 	}
- 
+
 	// HTML
 	echo '<div id="taxonomy-post_tag" class="categorydiv">';
 	echo '<input type="hidden" name="tax_input[post_tag][]" value="0" />';

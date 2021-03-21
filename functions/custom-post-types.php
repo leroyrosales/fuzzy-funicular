@@ -31,7 +31,8 @@
 			'show_in_nav_menus' => false,
 			'supports' => array(
 				'title',
-				'editor'
+				'editor',
+				'thumbnail'
 			)
 		)
 	);
