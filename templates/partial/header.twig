@@ -23,7 +23,7 @@
     </div>
     <nav id="nav-main" class="nav-main" role="navigation">
       <div class="container">
-        {% include "menu.twig" with {'items': menu.get_items} %}
+        {% include "partial/menu.twig" with { 'menu': primary_menu.get_items } %}
       </div>
     </nav><!-- #nav -->
   {% endblock %}
