@@ -2,25 +2,22 @@
 
 {% block content %}
 
-<style>
-.swiper-container {
-  width: 100%;
-  height: 100%;
-}
-</style>
-
     {% if slider %}
-
-        {% for slide in slider %}
-
-            <!-- Slider main container -->
-            <div class="swiper-container">
+        <!-- Slider main container -->
+        <section class="swiper-container">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
-                <!-- Slides -->
-                <div class="swiper-slide"><img class="carousel-cell-image img-fluid" src="{{ Image(slide).src }}"></div>
-                <div class="swiper-slide"><img class="carousel-cell-image img-fluid" src="{{ Image(slide).src }}"></div>
-                <div class="swiper-slide"><img class="carousel-cell-image img-fluid" src="{{ Image(slide).src }}"></div>
+                {% for slide in slider %}
+
+                    <!-- Slides -->
+                    <div class="swiper-slide position-relative">
+                        <img class="img-fluid w-100 h-100" src="{{ Image(slide).src }}">
+                        <div class="position-absolute top-50 start-0 translate-middle">
+                            <h2>{{ slide.title }}</h2>
+                        </div>
+                    </div>
+
+                {% endfor %}
             </div>
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
@@ -29,13 +26,7 @@
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
 
-            <!-- If we need scrollbar -->
-            <div class="swiper-scrollbar"></div>
-            </div>
-
-
-        {% endfor %}
-
+        </section>
     {% endif %}
 
 {% endblock %}
