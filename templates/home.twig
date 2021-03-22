@@ -2,10 +2,40 @@
 
 {% block content %}
 
-	{% for post in posts %}
-		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-	{% endfor %}
+<style>
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+</style>
 
-	{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+    {% if slider %}
+
+        {% for slide in slider %}
+
+            <!-- Slider main container -->
+            <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide"><img class="carousel-cell-image img-fluid" src="{{ Image(slide).src }}"></div>
+                <div class="swiper-slide"><img class="carousel-cell-image img-fluid" src="{{ Image(slide).src }}"></div>
+                <div class="swiper-slide"><img class="carousel-cell-image img-fluid" src="{{ Image(slide).src }}"></div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+            </div>
+
+
+        {% endfor %}
+
+    {% endif %}
 
 {% endblock %}

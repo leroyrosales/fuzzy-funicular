@@ -16,4 +16,12 @@
 $context          = Timber::context();
 $context['posts'] = new Timber\PostQuery();
 
+// Get slider posts
+$slider_args = array(
+    'post_type' => 'slide',
+    'posts_per_page' => 3,
+);
+
+$context['slider'] = Timber::get_posts( $slider_args );
+
 Timber::render( 'home.twig', $context );

@@ -2,6 +2,25 @@
 
   "use strict";
 
+  const swiper = new Swiper('.swiper-container', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'progressbar',
+    },
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  });
+
   // Primary Navigation
   let navToggle = document.getElementById("js-nav-toggle");
   let navWrapper = document.getElementById("ut-main_menu-wrapper");
@@ -59,18 +78,6 @@
       heading.classList.toggle("panel-heading--open");
     });
 
-  });
-
-  // Google Custom Search
-  document.addEventListener('DOMContentLoaded', function() {
-    let cx = '006470498568929423894:etsxpcor8wm';
-    let gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-        '//cse.google.com/cse.js?cx=' + cx;
-    let s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
   });
 
 })(jQuery);
