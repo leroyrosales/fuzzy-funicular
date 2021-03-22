@@ -10,10 +10,11 @@
                 {% for slide in slider %}
 
                     <!-- Slides -->
-                    <div class="swiper-slide position-relative">
-                        <img class="img-fluid w-100 h-100" src="{{ Image(slide).src }}">
-                        <div class="position-absolute top-50 start-0 translate-middle">
-                            <h2>{{ slide.title }}</h2>
+                    <div class="swiper-slide">
+                        <img class="card-img"  src="{{ Image(slide).src }}" alt="">
+                        <div class="card-img-overlay w-50 d-flex flex-column  justify-content-center p-5">
+                            <h2 class="card-title ms-5">{{ slide.title }}</h2>
+                            <p class="card-text ms-5">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         </div>
                     </div>
 
