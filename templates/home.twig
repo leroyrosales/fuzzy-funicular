@@ -11,8 +11,8 @@
 
                     <!-- Slides -->
                     <div class="swiper-slide">
-                        <img class="card-img"  src="{{ Image(slide).src }}" alt="">
-                        <div class="card-img-overlay w-50 d-flex flex-column  justify-content-center p-5">
+                        <img class="swiper-slide--img card-img"  src="{{ Image(slide).src }}" alt="{{ Image(slide).alt ?: Image(slide).title }}">
+                        <div class="swiper-slide--img-overlay d-flex flex-column  justify-content-center p-5">
                             <h2 class="card-title ms-5">{{ slide.title }}</h2>
                             <p class="card-text ms-5">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                         </div>
