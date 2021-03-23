@@ -191,6 +191,7 @@ new StarterSite();
 
 // Functions
 require_once( __DIR__ . '/functions/custom-post-types.php' );
+require_once( __DIR__ . '/functions/customizer.php' );
 // require_once( __DIR__ . '/functions/custom-roles.php' );
 require_once( __DIR__ . '/functions/disable-comments.php' );
 // require_once( __DIR__ . '/functions/disable-posts.php' );
@@ -212,4 +213,16 @@ add_action(
 add_action('_admin_menu', function() {
   remove_action('admin_menu', '_add_themes_utility_last', 101);
   remove_submenu_page( 'plugins.php', 'plugin-editor.php' );
+} );
+
+add_filter( 'timber/context', function( $context ) {
+	$brand_colors_primary = get_theme_mod(
+			'brand_colors_primary',
+			'#fffff'
+	);
+
+	$context['brand_colors_primary'] = $brand_colors_primary;
+
+	return $context;
+	
 } );
