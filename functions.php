@@ -214,15 +214,3 @@ add_action('_admin_menu', function() {
   remove_action('admin_menu', '_add_themes_utility_last', 101);
   remove_submenu_page( 'plugins.php', 'plugin-editor.php' );
 } );
-
-add_filter( 'timber/context', function( $context ) {
-	$brand_colors_primary = get_theme_mod(
-			'brand_colors_primary',
-			'#fffff'
-	);
-
-	$context['brand_colors_primary'] = $brand_colors_primary;
-
-	return $context;
-	
-} );
