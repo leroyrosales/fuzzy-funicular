@@ -1,8 +1,8 @@
 {% if menu %}
 	<ul class="list-unstyled m-0 d-flex justify-content-between">
 	{% for item in menu %}
-		<li class="{{ item.classes | join(' ') }}">
-			<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+		<li class="m-0 py-3 h5 {{ item.classes | join(' ') }}">
+			<a class="text-white text-decoration-none" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
 			{% if item.children %}
 				{% include "partial/menu.twig" with {'items': item.children} %}
 			{% endif %}
