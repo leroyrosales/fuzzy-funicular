@@ -69,6 +69,24 @@ function wpb_customize_register($wp_customize){
         'priority'  => 3
     ) ) );
 
+  // Tertiary Brand color
+  $wp_customize->add_setting('site_brand_colors_tertiary', array(
+    'default' => '#99dcf3',
+    'sanitize_callback' => 'sanitize_hex_color',
+    'type'      => 'theme_mod'
+  ));
+
+  $wp_customize->add_control(
+    new WP_Customize_Color_Control(
+    $wp_customize,
+    'tertiary_brand_color',
+    array(
+        'label'      => __( 'Tertiary brand Color' ),
+        'section'    => 'site_brand_colors',
+        'settings'   => 'site_brand_colors_tertiary',
+        'priority'  => 4
+    ) ) );
+
     // Footer color
     $wp_customize->add_setting('site_brand_colors_footer', array(
       'default' => '#e5ebee',
@@ -84,7 +102,7 @@ function wpb_customize_register($wp_customize){
           'label'      => __( 'Footer Color' ),
           'section'    => 'site_brand_colors',
           'settings'   => 'site_brand_colors_footer',
-          'priority'  => 4
+          'priority'  => 5
     ) ) );
 
 }
@@ -100,34 +118,41 @@ add_action('customize_register', 'wpb_customize_register');
 
 add_filter( 'timber/context', function( $context ) {
 
-	$site_brand_colors_header = get_theme_mod(
-			'site_brand_colors_header',
-			'#ffffff'
-	);
+  $site_brand_colors_header = get_theme_mod(
+    'site_brand_colors_header',
+    '#ffffff'
+  );
 
-	$context['site_brand_colors_header'] = $site_brand_colors_header;
+  $context['site_brand_colors_header'] = $site_brand_colors_header;
 
-	$site_brand_colors_primary = get_theme_mod(
-			'site_brand_colors_primary',
-			'#003d7d'
-	);
+  $site_brand_colors_primary = get_theme_mod(
+    'site_brand_colors_primary',
+    '#003d7d'
+  );
 
-	$context['site_brand_colors_primary'] = $site_brand_colors_primary;
+  $context['site_brand_colors_primary'] = $site_brand_colors_primary;
 
-	$site_brand_colors_secondary = get_theme_mod(
+  $site_brand_colors_secondary = get_theme_mod(
     'site_brand_colors_secondary',
     '#00a7e1'
-);
+  );
 
-$context['site_brand_colors_secondary'] = $site_brand_colors_secondary;
+  $context['site_brand_colors_secondary'] = $site_brand_colors_secondary;
 
-	$site_brand_colors_footer = get_theme_mod(
-			'site_brand_colors_footer',
-			'#e5ebee'
-	);
+  $site_brand_colors_tertiary = get_theme_mod(
+    'site_brand_colors_tertiary',
+    '#99dcf3'
+  );
 
-	$context['site_brand_colors_footer'] = $site_brand_colors_footer;
+  $context['site_brand_colors_tertiary'] = $site_brand_colors_tertiary;
 
-	return $context;
+  $site_brand_colors_footer = get_theme_mod(
+    'site_brand_colors_footer',
+    '#e5ebee'
+  );
+
+  $context['site_brand_colors_footer'] = $site_brand_colors_footer;
+
+  return $context;
 
 } );

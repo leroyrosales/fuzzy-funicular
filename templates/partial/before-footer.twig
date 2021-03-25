@@ -2,9 +2,15 @@
   <div class="container">
     <div class="row">
       <div class="col-12 d-flex justify-content-center">
-        {% for button in before_footer_section %}
-          <a class="btn btn-secondary rounded-none" href="{{ button.button.url }}" target="{{ button.button.target ? '_self' : '_blank' }}">{{ button.button.title }}</a>
-        {% endfor %}
+
+        {% if before_footer_section.0.button %}
+          <a class="btn btn-secondary rounded-none" href="{{ before_footer_section.0.button.url }}" target="{{ before_footer_section.0.button.target ? '_self' : '_blank' }}">{{ before_footer_section.0.button.title }}</a>
+        {% endif %}
+
+        {% if before_footer_section.1.button %}
+          <a class="btn btn-tertiary rounded-none" href="{{ before_footer_section.1.button.url }}" target="{{ before_footer_section.1.button.target ? '_self' : '_blank' }}">{{ before_footer_section.1.button.title }}</a>
+        {% endif %}
+
       </div>
     </div>
   </div>
