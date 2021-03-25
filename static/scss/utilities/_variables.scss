@@ -14,54 +14,54 @@
 // Grayscale and brand colors for use across Bootstrap.
 
 // Start with assigning color names to specific hex values.
-$orange: $ut-burntorange;
-$yellow: $ut-sunshine;
+// $orange: $ut-burntorange;
+// $yellow: $ut-sunshine;
 
 // Create grayscale
-$primary:                   $ut-burntorange;
-$gray-dark:                 #282828;
-$gray:                      $ut-charcoal;
-$gray-light:                #666e75;
-$gray-lighter:              #e6e6e6;
-$gray-lightest:             #f7f7f9;
-$blue:                    $ut-bluebonnet;
+// $primary:                   $ut-burntorange;
+// $gray-dark:                 #282828;
+// $gray:                      $ut-charcoal;
+// $gray-light:                #666e75;
+// $gray-lighter:              #e6e6e6;
+// $gray-lightest:             #f7f7f9;
+// $blue:                    $ut-bluebonnet;
 
 // Reassign color vars to semantic color scheme
-$brand-primary:             $ut-burntorange;
-$brand-warning:             $ut-sunshine;
+// $brand-primary:             $ut-burntorange;
+// $brand-warning:             $ut-sunshine;
 
 // ----------
 // TDS Font Family Variables
 // See @utexas/tds/core/_variables.scss
-$ut-font--serif: 'GT-Sectra', georgia, serif;
-$ut-font--sans: 'LibreFrank', arial, helvetica, sans-serif;
+// $ut-font--serif: 'GT-Sectra', georgia, serif;
+// $ut-font--sans: 'LibreFrank', arial, helvetica, sans-serif;
 
-$ut-font--code: monaco, consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;
-$ut-font--pre: 'Courier 10 Pitch', courier, monospace;
+// $ut-font--code: monaco, consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;
+// $ut-font--pre: 'Courier 10 Pitch', courier, monospace;
 
 // ----------
 // Bootstrap Fonts
 // Font, line-height, and color for body text, headings, and more.
-$font-family-sans-serif: $ut-font--sans;
-$font-family-monospace: $ut-font--serif;
-$font-family-base: $ut-font--sans;
+// $font-family-sans-serif: $ut-font--sans;
+// $font-family-monospace: $ut-font--serif;
+// $font-family-base: $ut-font--sans;
 
 // Grid breakpoints
-$grid-breakpoints: (
-  xs: 0,
-  sm: 600px,
-  md: 900px,
-  lg: 1200px,
-  xl: 1600px,
-);
+// $grid-breakpoints: (
+//   xs: 0,
+//   sm: 600px,
+//   md: 900px,
+//   lg: 1200px,
+//   xl: 1600px,
+// );
 
 // Grid containers
-$container-max-widths: (
-  sm: 840px,
-  md: 1000px,
-  lg: 1140px,
-  xl: 1500px,
-);
+// $container-max-widths: (
+//   sm: 840px,
+//   md: 1000px,
+//   lg: 1140px,
+//   xl: 1500px,
+// );
 
 // DISABLE ROUNDED CORDERS
-$enable-rounded: false;
+// $enable-rounded: false;
