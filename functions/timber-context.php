@@ -18,9 +18,6 @@ add_filter( 'timber_context', function ( $context ) {
 	$context['enable_announcement_button'] = get_field( 'enable_announcement_button', 'option' );
 	$context['announcement_button'] = get_field( 'announcement_button', 'option' );
 
-	// Before Footer Area
-	$context['bf_cta'] = get_field( 'before_footer_cta', 'option' );
-
 	// Enable Breadcrumbs field
 	$context['enable_breadcrumbs'] = get_field( 'enable_breadcrumbs', 'option' );
 
@@ -29,6 +26,9 @@ add_filter( 'timber_context', function ( $context ) {
 
 	// Is search query
 	$context['is_search'] = is_search();
+
+	// Before Footer Area
+	$context['before_footer_section'] = get_field( 'before_footer_section', 'option' );
 
 	// Is front page of site
 	$context['is_front_page'] = is_front_page();

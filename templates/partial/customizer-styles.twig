@@ -1,4 +1,24 @@
 <style>
+
+    a {
+        color: {{ site_brand_colors_primary }};
+    }
+
+    a:hover,
+    a:focus {
+        color: {{ site_brand_colors_secondary }};
+    }
+
+    .btn-primary {
+        background-color: {{ site_brand_colors_primary }};
+        border-color: {{ site_brand_colors_primary }};
+    }
+
+    .btn-secondary {
+        background-color: {{ site_brand_colors_secondary }};
+        border-color: {{ site_brand_colors_secondary }};
+    }
+
     .header {
         background-color:{{  site_brand_colors_header }};
     }
@@ -8,7 +28,7 @@
     }
 
     .nav-main {
-        background-color:{{ site_brand_colors_primary }};
+        background-color: {{ site_brand_colors_primary }};
     }
 
     .nav-main li a:hover {
@@ -27,4 +47,5 @@
     .footer {
         background-color:{{  site_brand_colors_footer }};
     }
+
 </style>

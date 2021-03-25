@@ -2,8 +2,9 @@
   <div class="container">
     <div class="row">
       <div class="col-12 d-flex justify-content-center">
-        <button>button</button>
-        <button>button</button>
+        {% for button in before_footer_section %}
+          <a class="btn btn-secondary" href="{{ button.button.url }}" target="{{ button.button.target ? '_self' : '_blank' }}">{{ button.button.title }}</a>
+        {% endfor %}
       </div>
     </div>
   </div>

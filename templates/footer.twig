@@ -1,4 +1,6 @@
-{% include 'partial/before-footer.twig' %}
+{% if before_footer_section %}
+  {% include 'partial/before-footer.twig' %}
+{% endif %}
 
 <footer class="footer">
   <div class="container pt-4 pb-5">
