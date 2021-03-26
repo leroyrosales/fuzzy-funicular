@@ -82,7 +82,6 @@ class StarterSite extends Timber\Site {
     register_nav_menus(
       array(
 				'primary_menu' => __( 'Primary Menu', 'border_beagle' ),
-				'header_cta_menu' => __( 'Header CTA Menu', 'border_beagle' ),
 				'second_header_menu'  => __( 'Second Header Menu', 'border_beagle' ),
 				'footer_menu'  => __( 'Footer Menu', 'border_beagle' ),
 				'second_footer_menu'  => __( 'Second Footer Menu', 'border_beagle' ),
@@ -96,9 +95,6 @@ class StarterSite extends Timber\Site {
 	 */
 	public function add_to_context( $context ) {
 		$context['primary_menu'] = new TimberMenu('primary_menu');
-		if( has_nav_menu( 'header_cta_menu' ) ) {
-			$context['header_cta_menu'] = new TimberMenu('header_cta_menu');
-		}
 		if( has_nav_menu( 'second_header_menu' ) ) {
 			$context['second_header_menu'] = new TimberMenu('second_header_menu');
 		}

@@ -27,6 +27,9 @@ add_filter( 'timber_context', function ( $context ) {
 	// Is search query
 	$context['is_search'] = is_search();
 
+	// Header CTAs
+	$context['header_ctas'] = get_field( 'header_ctas', 'option' );
+
 	// Before Footer Area
 	$context['before_footer_section'] = get_field( 'before_footer_section', 'option' );
 
