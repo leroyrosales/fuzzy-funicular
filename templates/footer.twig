@@ -1,0 +1,22 @@
+{% if before_footer_section %}
+  {% include 'partial/before-footer.twig' %}
+{% endif %}
+
+<footer class="footer">
+  <div class="container pt-4 pb-5">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="hdr-logo" role="banner">
+          <a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
+        </h1>
+        {% if site.description %}
+          {{ site.description }}
+        {% endif  %}
+        <p>&copy; {{"now"|date('Y')}} <a href="{{ site.url }}" class="font-weight-bold">{{ site.name }}</a> All rights reserved.</p>
+        {% if second_footer_menu %}
+          {% include "partial/footer-inline-menu.twig" with { 'menu': second_footer_menu.get_items, 'menu_id': 'second-footer-menu' } %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</footer>

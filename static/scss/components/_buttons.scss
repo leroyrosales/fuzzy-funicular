@@ -1,0 +1,34 @@
+// ----------
+// Buttons
+// ----------
+
+// ----------
+// Bootstrap Customizations
+
+// ----------
+// Texas Design System Customizations
+.ut-btn {
+  &:hover,
+  &:focus {
+    background-color: $ut-burntorange--s10;
+    border-color: $ut-burntorange--s10;
+  }
+
+  &--secondary {
+    &:link,
+    &:visited {
+      color: $ut-burntorange;
+    }
+
+    &:hover,
+    &:focus {
+      border: 2px solid $ut-burntorange--s20;
+      background-color: $ut-burntorange--s20;
+      /* stylelint-disable declaration-no-important  */
+      color: $ut-white !important;
+      /* stylelint-enable */
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+}
