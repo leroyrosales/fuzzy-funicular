@@ -7,5 +7,5 @@
  */
 
 $context = array();
-$context['sidebar'] = Timber::get_sidebar('sidebar');
-Timber::render('sidebar.twig', $context);
+$context['secondary_sidebar'] = Timber::get_sidebar('secondary_sidebar');
+Timber::render('secondary_sidebar.twig', $context);

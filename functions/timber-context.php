@@ -35,6 +35,11 @@ add_filter( 'timber_context', function ( $context ) {
 
 	// Is front page of site
 	$context['is_front_page'] = is_front_page();
+
+	// Sidebar
+	$context['sidebar'] = Timber::get_widgets('sidebar');
+
+	$context['secondary_sidebar'] = Timber::get_widgets('secondary_sidebar');
 	
 	return $context;
 
