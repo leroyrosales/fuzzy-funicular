@@ -19,4 +19,8 @@
 		</div>
 	</div><!-- /content-wrapper -->
 	
+	{% if sidebar %}
+		{% include "sidebar.twig" with { 'sidebar': sidebar } %}
+	{% endif %}
+
 {% endblock %}
