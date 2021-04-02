@@ -24,6 +24,31 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_6067942af345f",
+                            "label": "Background Color",
+                            "name": "background_color",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "primary": "Primary",
+                                "secondary": "Secondary",
+                                "Tertiary": "Tertiary"
+                            },
+                            "allow_null": 1,
+                            "other_choice": 0,
+                            "default_value": "",
+                            "layout": "horizontal",
+                            "return_format": "value",
+                            "save_other_choice": 0
+                        },
+                        {
                             "key": "field_606787071e5ac",
                             "label": "WYSIWYG",
                             "name": "wysiwyg",
@@ -405,7 +430,7 @@
     "menu_order": 0,
     "position": "acf_after_title",
     "style": "seamless",
-    "label_placement": "left",
+    "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": [
         "the_content"
@@ -419,5 +444,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1617400025
+    "modified": 1617401046
 }
