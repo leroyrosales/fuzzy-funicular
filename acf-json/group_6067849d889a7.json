@@ -37,9 +37,9 @@
                                 "id": ""
                             },
                             "choices": {
-                                "primary": "Primary",
-                                "secondary": "Secondary",
-                                "Tertiary": "Tertiary"
+                                "bg-primary": "Primary",
+                                "bg-secondary": "Secondary",
+                                "bg-tertiary": "Tertiary"
                             },
                             "allow_null": 1,
                             "other_choice": 0,
@@ -444,5 +444,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1617401046
+    "modified": 1617416866
 }
