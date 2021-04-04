@@ -23,11 +23,22 @@
         {% endif %}
         {% if content.acf_fc_layout == 'banner' %}
             <section class="{{ content.background_color }}">
-                <div class="container">
-                    <div class="row py-5">
-                        <div class="col-12">
-                            {{ content.headline }}
+                <div class="container py-5">
+                    <div class="row bg-primary p-4">
+                        <div class="col-12 {{ content.link ? 'col-md-8' : '' }}">
+                          {% if secondary_headline_location == 'below' %}
+                            <h3 class="h1 m-0 text-white fw-bold">{{ content.headline }}</h3>
+                            <span class="h3 text-secondary">{{ content.secondary_headline }}</span>
+                          {% else %}
+                            <span class="h3 text-secondary">{{ content.secondary_headline }}</span>
+                            <h3 class="h1 m-0 text-white fw-bold">{{ content.headline }}</h3>
+                          {% endif %}
                         </div>
+                        {% if content.link %}
+                          <div class="col-12 col-md">
+                            <a class="btn btn-lg btn-secondary" href="{{ content.link.url }}" target="{{ content.link.target }}">{{ content.link.title }}</a>
+                          </div>
+                        {% endif %}
                     </div>
                 </div>
             </section>
@@ -44,4 +55,3 @@
             </section>
         {% endif %}
     {% endfor %}
-    
