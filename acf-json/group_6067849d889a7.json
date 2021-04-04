@@ -425,6 +425,13 @@
                 "operator": "==",
                 "value": "page-flex.php"
             }
+        ],
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
         ]
     ],
     "menu_order": 0,
@@ -444,5 +451,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1617416866
+    "modified": 1617500481
 }

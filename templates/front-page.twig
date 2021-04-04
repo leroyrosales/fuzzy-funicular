@@ -30,4 +30,19 @@
         </section>
     {% endif %}
 
+
+    {% for content in content %}
+        {% if content.acf_fc_layout == 'wysiwyg' %}
+            <section class="{{ content.background_color }}">
+                <div class="container">
+                    <div class="row py-5">
+                        <div class="col-12">
+                            {{ content.wysiwyg }}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {% endif %}
+    {% endfor %}
+    
 {% endblock %}
