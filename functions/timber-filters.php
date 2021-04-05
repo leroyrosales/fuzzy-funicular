@@ -29,7 +29,7 @@ add_filter( 'timber/twig', function ($twig) {
   
           //Check if opacity is set(rgba or rgb)
           if($opacity){
-            $opacity = 0.75;
+            $opacity = 0.7;
             $output = 'rgba('.implode(",",$rgb).','.$opacity.')';
           } else {
             $output = 'rgb('.implode(",",$rgb).')';

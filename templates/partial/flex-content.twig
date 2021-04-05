@@ -26,7 +26,9 @@
                             <div class="col-12 col-md">
                               <div class="promo-unit--card card text-center border-0">
                                 <img class="promo-unit--card-img card-img-top img-fluid"  src="{{ promo.image.url }}" alt="{{ promo.image.alt ?: promo.image.title }}">
-                                <a class="promo-unit--card-link stretched-link py-3" href="{{ promo.link.url }}" target="{{ promo.link.target }}">{{ promo.link.title }}</a>
+                                <span class="promo-unit--card-link py-3">
+                                  <a class="stretched-link" href="{{ promo.link.url }}" target="{{ promo.link.target }}">{{ promo.link.title }}</a>
+                                </span>
                               </div>
                             </div>
                           {% endfor %}
