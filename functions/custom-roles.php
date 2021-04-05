@@ -17,12 +17,12 @@
 //     array(
 // 			'read'  => true,
 // 		)
-// 	);	
+// 	);
 
 // 	$roles = array( 'custom_role', 'editor', 'administrator' );
 
 // 	// Loop through each role and assign capabilities
-// 	foreach($roles as $the_role) { 
+// 	foreach($roles as $the_role) {
 
 // 			$role = get_role($the_role);
 
