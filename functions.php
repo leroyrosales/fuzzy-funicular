@@ -195,7 +195,7 @@ require_once( __DIR__ . '/functions/disable-comments.php' );
 require_once( __DIR__ . '/functions/optimize-wp.php' );
 require_once( __DIR__ . '/functions/sidebars.php' );
 require_once( __DIR__ . '/functions/timber-context.php' );
-
+require_once( __DIR__ . '/functions/timber-filters.php' );
 
 // After WordPress is Loaded
 add_action(

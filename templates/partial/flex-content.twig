@@ -19,6 +19,20 @@
                             <span class="lead">{{ content.text }}</span>
                         </div>
                     </div>
+                    <div class="row justify-content-center">
+                      <div class="col-12 col-md-8">
+                        <div class="row">
+                          {% for promo in content.promo %}
+                            <div class="col-12 col-md">
+                              <div class="promo-unit--card card text-center border-0">
+                                <img class="promo-unit--card-img card-img-top img-fluid"  src="{{ promo.image.url }}" alt="{{ promo.image.alt ?: promo.image.title }}">
+                                <a class="promo-unit--card-link stretched-link py-3" href="{{ promo.link.url }}" target="{{ promo.link.target }}">{{ promo.link.title }}</a>
+                              </div>
+                            </div>
+                          {% endfor %}
+                        </div>
+                      </div>
+                    </div>
                 </div>
             </section>
         {% endif %}
