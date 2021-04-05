@@ -86,6 +86,31 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_606a746a8c695",
+                            "label": "Background Color",
+                            "name": "background_color",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "bg-primary": "Primary",
+                                "bg-secondary": "Secondary",
+                                "bg-tertiary": "Tertiary"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "default_value": "",
+                            "layout": "vertical",
+                            "return_format": "value",
+                            "save_other_choice": 0
+                        },
+                        {
                             "key": "field_6067886a138c8",
                             "label": "Headline",
                             "name": "headline",
@@ -206,6 +231,31 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_606a74868c696",
+                            "label": "Background Color",
+                            "name": "background_color",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "bg-primary": "Primary",
+                                "bg-secondary": "Secondary",
+                                "bg-tertiary": "Tertiary"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "default_value": "",
+                            "layout": "vertical",
+                            "return_format": "value",
+                            "save_other_choice": 0
+                        },
+                        {
                             "key": "field_60678e629d166",
                             "label": "Headline",
                             "name": "headline",
@@ -300,6 +350,31 @@
                     "label": "CTA",
                     "display": "block",
                     "sub_fields": [
+                        {
+                            "key": "field_606a749b8c697",
+                            "label": "Background Color",
+                            "name": "background_color",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "bg-primary": "Primary",
+                                "bg-secondary": "Secondary",
+                                "bg-tertiary": "Tertiary"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "default_value": "",
+                            "layout": "vertical",
+                            "return_format": "value",
+                            "save_other_choice": 0
+                        },
                         {
                             "key": "field_606790af804c9",
                             "label": "Headline",
@@ -451,5 +526,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1617500481
+    "modified": 1617589457
 }
