@@ -87,6 +87,24 @@ function wpb_customize_register($wp_customize){
         'priority'  => 4
     ) ) );
 
+  // Content Wrap color
+  $wp_customize->add_setting('site_brand_content_wrap_color', array(
+    'default' => '#eff3f5',
+    'sanitize_callback' => 'sanitize_hex_color',
+    'type'      => 'theme_mod'
+  ));
+
+  $wp_customize->add_control(
+    new WP_Customize_Color_Control(
+    $wp_customize,
+    'content_wrap_color',
+    array(
+        'label'      => __( 'Content Wrap Color' ),
+        'section'    => 'site_brand_colors',
+        'settings'   => 'site_brand_content_wrap_color',
+        'priority'  => 5
+    ) ) );
+
     // Footer color
     $wp_customize->add_setting('site_brand_colors_footer', array(
       'default' => '#e5ebee',
@@ -102,7 +120,7 @@ function wpb_customize_register($wp_customize){
           'label'      => __( 'Footer Color' ),
           'section'    => 'site_brand_colors',
           'settings'   => 'site_brand_colors_footer',
-          'priority'  => 5
+          'priority'  => 6
     ) ) );
 
 }
@@ -145,6 +163,13 @@ add_filter( 'timber/context', function( $context ) {
   );
 
   $context['site_brand_colors_tertiary'] = $site_brand_colors_tertiary;
+
+  $site_brand_content_wrap_color = get_theme_mod(
+    'site_brand_content_wrap_color',
+    '#eff3f5'
+  );
+
+  $context['site_brand_content_wrap_color'] = $site_brand_content_wrap_color;
 
   $site_brand_colors_footer = get_theme_mod(
     'site_brand_colors_footer',

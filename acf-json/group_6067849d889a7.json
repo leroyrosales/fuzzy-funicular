@@ -37,6 +37,7 @@
                                 "id": ""
                             },
                             "choices": {
+                                "bg-light": "Light",
                                 "bg-primary": "Primary",
                                 "bg-secondary": "Secondary",
                                 "bg-tertiary": "Tertiary"
@@ -99,11 +100,12 @@
                                 "id": ""
                             },
                             "choices": {
+                                "bg-light": "Light",
                                 "bg-primary": "Primary",
                                 "bg-secondary": "Secondary",
                                 "bg-tertiary": "Tertiary"
                             },
-                            "allow_null": 0,
+                            "allow_null": 1,
                             "other_choice": 0,
                             "default_value": "",
                             "layout": "vertical",
@@ -244,11 +246,12 @@
                                 "id": ""
                             },
                             "choices": {
+                                "bg-light": "Light",
                                 "bg-primary": "Primary",
                                 "bg-secondary": "Secondary",
                                 "bg-tertiary": "Tertiary"
                             },
-                            "allow_null": 0,
+                            "allow_null": 1,
                             "other_choice": 0,
                             "default_value": "",
                             "layout": "vertical",
@@ -364,11 +367,12 @@
                                 "id": ""
                             },
                             "choices": {
+                                "bg-light": "Light",
                                 "bg-primary": "Primary",
                                 "bg-secondary": "Secondary",
                                 "bg-tertiary": "Tertiary"
                             },
-                            "allow_null": 0,
+                            "allow_null": 1,
                             "other_choice": 0,
                             "default_value": "",
                             "layout": "vertical",
@@ -526,5 +530,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1617589457
+    "modified": 1617659657
 }
