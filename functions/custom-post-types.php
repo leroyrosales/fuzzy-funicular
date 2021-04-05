@@ -26,7 +26,7 @@
 			'rewrite' => false,
       'public' => true,
       'publicly_queryable' => false,
-			'menu_position' => 20,
+			'menu_position' => 15,
 			'menu_icon' => 'dashicons-sticky',
 			'show_in_nav_menus' => false,
 			'supports' => array(

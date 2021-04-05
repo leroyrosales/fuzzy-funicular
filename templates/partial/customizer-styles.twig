@@ -25,8 +25,29 @@
         border-color: {{ site_brand_colors_tertiary }};
     }
 
+    .btn-outline-secondary {
+        border-color: {{ site_brand_colors_secondary }};
+        color: {{ site_brand_colors_secondary }};
+    }
+
+    .bg-primary {
+        background-color: {{ site_brand_colors_primary }}!important;
+    }
+
+    .bg-secondary {
+        background-color: {{ site_brand_colors_secondary }}!important;
+    }
+
+    .bg-tertiary {
+        background-color: {{ site_brand_colors_tertiary }};
+    }
+
     .border-secondary {
         border-color: {{ site_brand_colors_secondary }}!important;
+    }
+
+    .text-primary {
+        color: {{ site_brand_colors_primary }}!important;
     }
 
     .text-secondary {
@@ -52,6 +73,10 @@
 
     .swiper-container {
         border-bottom: 5px solid {{ site_brand_colors_secondary }};
+    }
+
+    .promo-unit--card-link {
+        background-color:{{ site_brand_colors_secondary|hex2rgba }};
     }
 
     .before-footer {

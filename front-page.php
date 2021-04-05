@@ -24,4 +24,8 @@ $slider_args = array(
 
 $context['slider'] = Timber::get_posts( $slider_args );
 
-Timber::render( 'home.twig', $context );
+// Get all content fields
+$context['content'] = get_field('content');
+
+
+Timber::render( 'front-page.twig', $context );

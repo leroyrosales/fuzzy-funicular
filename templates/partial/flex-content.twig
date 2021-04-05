@@ -1,0 +1,96 @@
+    {% for content in content %}
+        {% if content.acf_fc_layout == 'wysiwyg' %}
+            <section class="{{ content.background_color }}">
+                <div class="container">
+                    <div class="row py-5 justify-content-center">
+                        <div class="col-12 col-lg-8">
+                            {{ content.wysiwyg }}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {% endif %}
+        {% if content.acf_fc_layout == 'promo_units' %}
+            <section class="{{ content.background_color }}">
+                <div class="container">
+                    <div class="row py-5 text-center justify-content-center">
+                        <div class="col-12 col-md-8">
+                            <h3 class="text-primary mb-3 fw-bolder">{{ content.headline }}</h3>
+                            <span class="lead">{{ content.text }}</span>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                      <div class="col-12 col-md-8">
+                        <div class="row">
+                          {% for promo in content.promo %}
+                            <div class="col-12 col-md">
+                              <div class="promo-unit--card card text-center border-0">
+                                <img class="promo-unit--card-img card-img-top img-fluid"  src="{{ promo.image.url }}" alt="{{ promo.image.alt ?: promo.image.title }}">
+                                <span class="promo-unit--card-link py-3">
+                                  <a class="stretched-link" href="{{ promo.link.url }}" target="{{ promo.link.target }}">{{ promo.link.title }}</a>
+                                </span>
+                              </div>
+                            </div>
+                          {% endfor %}
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </section>
+        {% endif %}
+        {% if content.acf_fc_layout == 'banner' %}
+            <section class="{{ content.background_color }}">
+                <div class="container py-5">
+                  <div class="row justify-content-center">
+                    <div class="col-12 col-md-8">
+                      <div class="row bg-primary px-3 py-5 justify-content-center align-items-center">
+                        <div class="col-12 {{ content.link ? 'col-lg-8' : '' }}">
+                          {% if secondary_headline_location == 'below' %}
+                            <h3 class="h1 m-0 text-white fw-bold">{{ content.headline }}</h3>
+                            <h4 class="h3 text-secondary">{{ content.secondary_headline }}</h4>
+                          {% else %}
+                            <h4 class="h3 text-secondary">{{ content.secondary_headline }}</h4>
+                            <h3 class="h1 m-0 text-white fw-bold">{{ content.headline }}</h3>
+                          {% endif %}
+                        </div>
+                        {% if content.link %}
+                          <div class="col-12 col-lg mt-4 mt-lg-0">
+                            <a class="btn btn-lg d-block btn-secondary" href="{{ content.link.url }}" target="{{ content.link.target }}">{{ content.link.title }}</a>
+                          </div>
+                        {% endif %}
+                        </div>
+                      </div>
+                  </div>
+                </div>
+            </section>
+        {% endif %}
+        {% if content.acf_fc_layout == 'cta' %}
+            <section class="{{ content.background_color }}">
+                <div class="container py-5">
+                  {% if content.headline %}
+                    <div class="row mb-3 text-center justify-content-center">
+                      <div class="col-12 col-md-6">
+                          <h3 class="h4 text-primary">{{ content.headline }}</h3>
+                      </div>
+                    </div>
+                  {% endif %}
+                  {% if content.text %}
+                    <div class="row mb-4 text-center justify-content-center">
+                      <div class="col-12 col-md-6 lead">
+                        {{ content.text }}
+                      </div>
+                    </div>
+                  {% endif %}
+                  {% if content.links %}
+                    <div class="row mt-4 text-center justify-content-center">
+                      <div class="col-12 col-md-3">
+                        {% for link in content.links %}
+                          <a class="btn btn-lg d-block btn-outline-secondary" href="{{ link.link.url }}" target="{{ link.link.target }}">{{ link.link.title }}</a>
+                        {% endfor %}
+                      </div>
+                    </div>
+                  {% endif %}
+                </div>
+            </section>
+        {% endif %}
+    {% endfor %}

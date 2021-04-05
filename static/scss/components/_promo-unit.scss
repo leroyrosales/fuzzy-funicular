@@ -1,0 +1,19 @@
+// Promo Units
+
+.promo-unit--card {
+    border-radius: 0;
+    position: relative;
+    &-img {
+        border-radius: 0;
+    }
+    &-link {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        z-index: 9;
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+    }
+}
