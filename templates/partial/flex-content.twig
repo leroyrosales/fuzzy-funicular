@@ -3,7 +3,7 @@
             <section class="{{ content.background_color }}">
                 <div class="container">
                     <div class="row py-5 justify-content-center">
-                        <div class="col-12 col-lg-8">
+                        <div class="col-12 col-md-10">
                             {{ content.wysiwyg }}
                         </div>
                     </div>
@@ -14,18 +14,22 @@
             <section class="{{ content.background_color }}">
                 <div class="container">
                     <div class="row py-5 text-center justify-content-center">
-                        <div class="col-12 col-md-8">
+                        <div class="col-12 col-md-10">
                             <h3 class="text-primary mb-3 fw-bolder">{{ content.headline }}</h3>
                             <span class="lead">{{ content.text }}</span>
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                      <div class="col-12 col-md-8">
+                      <div class="col-12 col-md-10">
                         <div class="row">
                           {% for promo in content.promo %}
                             <div class="col-12 col-md">
-                              <div class="promo-unit--card card text-center border-0">
-                                <img class="promo-unit--card-img card-img-top img-fluid"  src="{{ promo.image.url }}" alt="{{ promo.image.alt ?: promo.image.title }}">
+                              <div class="promo-unit--card card text-center border-0 mb-4 mb-md-0">
+                                <picture>
+                                  <source media="(min-width: 800px)" srcset="{{ promo.image.url | resize(900, 500, 'center', 'center') }} 1000w">
+                                  <source media="(min-width: 450px)" srcset="{{ promo.image.url | resize(675, 375, 'center', 'center') }} 600w">
+                                  <img class="promo-unit--card-img card-img-top img-fluid"  src="{{ promo.image.url | resize(450, 250, 'center', 'center') }}" alt="{{ promo.image.alt ?: promo.image.title }}">
+                                </picture>
                                 <span class="promo-unit--card-link py-3">
                                   <a class="stretched-link" href="{{ promo.link.url }}" target="{{ promo.link.target }}">{{ promo.link.title }}</a>
                                 </span>
@@ -42,7 +46,7 @@
             <section class="{{ content.background_color }}">
                 <div class="container py-5">
                   <div class="row justify-content-center">
-                    <div class="col-12 col-md-8">
+                    <div class="col-12 col-md-10">
                       <div class="row bg-primary px-3 py-5 justify-content-center align-items-center">
                         <div class="col-12 {{ content.link ? 'col-lg-8' : '' }}">
                           {% if secondary_headline_location == 'below' %}
