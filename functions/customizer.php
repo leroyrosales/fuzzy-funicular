@@ -8,6 +8,23 @@
 
 function wpb_customize_register($wp_customize){
 
+  // Site logo
+  $wp_customize->add_setting(
+    'site_logo',
+    array(
+      'default' => '',
+      'type' => 'theme_mod',
+      'capability' => 'edit_theme_options'
+    )
+  );
+
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'site_logo', array(
+    'label'   => __('Site Logo'),
+    'section' => 'title_tagline',
+    'settings' => 'site_logo',
+    'priority'  => 1
+  )));
+
   // Brand Colors Section
   $wp_customize->add_section('site_brand_colors', array(
     'title'   => __( 'Site Colors' ),
@@ -135,6 +152,13 @@ add_action('customize_register', 'wpb_customize_register');
  */
 
 add_filter( 'timber/context', function( $context ) {
+
+  $site_logo = get_theme_mod(
+    'site_logo',
+    ''
+  );
+
+  $context['site_logo'] = $site_logo;
 
   $site_brand_colors_header = get_theme_mod(
     'site_brand_colors_header',

@@ -6,11 +6,15 @@
   <div class="container pt-4 pb-5">
     <div class="row">
       <div class="col-12">
-        <h1 class="hdr-logo" role="banner">
-          <a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
-        </h1>
+        {% if site_logo %}
+          <img class="img-fluid" src="{{ site_logo }}" alt="{{site.name}}">
+        {% else %}
+          <h1 class="hdr-logo brand-text-primary" role="banner">
+            <a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
+          </h1>
+        {% endif %}
         {% if site.description %}
-          {{ site.description }}
+          <p>{{ site.description }}</p>
         {% endif  %}
         <p>&copy; {{"now"|date('Y')}} <a href="{{ site.url }}" class="font-weight-bold">{{ site.name }}</a> All rights reserved.</p>
         {% if second_footer_menu %}
