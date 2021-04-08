@@ -3,15 +3,28 @@
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
         {% for slide in slider %}
-
+            <style>
+                .swiper-slide--{{loop.index}} {
+                    background-image:url({{ Image(slide).src|resize(600) }});
+                }
+                @media screen and (min-width: 900px) {
+                    .swiper-slide--{{loop.index}} {
+                        background-image: url("{{ Image(slide).src|resize(1200) }}");
+                    }
+                }
+                @media screen and (min-width: 1200px) {
+                    .swiper-slide--{{loop.index}} {
+                        background-image: url("{{ Image(slide).src|resize(1600) }}");
+                    }
+                }
+            </style>
             <!-- Slides -->
-            <div class="swiper-slide">
-                <img class="d-none d-lg-block swiper-slide--img card-img"  src="{{ Image(slide).src }}" alt="{{ Image(slide).alt ?: Image(slide).title }}">
+            <div class="swiper-slide swiper-slide--{{loop.index}}">
                 <div class="swiper-slide--img-overlay d-flex flex-column  justify-content-center">
                     <div class="p-5 ps-lg-5 ms-2 ms-lg-5">
                         <h2 class="card-title text-secondary">{{ slide.title }}</h2>
-                        <p class="card-text lead fw-normal">{{ slide.text }}</p>
-                        <a class="btn btn-lg btn-outline-secondary" href="{{ slide.cta.url }}"">{{ slide.cta.title }}</a>
+                        <p class="d-none d-md-block card-text lead fw-normal">{{ slide.text }}</p>
+                        <a class="btn btn-lg btn-outline-secondary" href="{{ slide.cta.url }}">{{ slide.cta.title }}</a>
                     </div>
                 </div>
             </div>
