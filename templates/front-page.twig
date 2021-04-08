@@ -3,31 +3,7 @@
 {% block content %}
 
     {% if slider %}
-        <!-- Slider main container -->
-        <section class="swiper-container">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-                {% for slide in slider %}
-
-                    <!-- Slides -->
-                    <div class="swiper-slide">
-                        <img class="swiper-slide--img card-img"  src="{{ Image(slide).src }}" alt="{{ Image(slide).alt ?: Image(slide).title }}">
-                        <div class="swiper-slide--img-overlay d-flex flex-column  justify-content-center p-5">
-                            <h2 class="card-title ms-5">{{ slide.title }}</h2>
-                            <p class="card-text ms-5">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        </div>
-                    </div>
-
-                {% endfor %}
-            </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-
-        </section>
+        {% include 'partial/slider.twig' %}
     {% endif %}
 
     {% include 'partial/flex-content.twig' %}
