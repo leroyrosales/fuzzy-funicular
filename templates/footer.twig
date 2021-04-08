@@ -3,24 +3,37 @@
 {% endif %}
 
 <footer class="footer">
-  <div class="container pt-4 pb-5">
-    <div class="row">
-      <div class="col-12">
-        {% if site_logo %}
-          <img class="img-fluid" src="{{ site_logo }}" alt="{{site.name}}">
-        {% else %}
-          <h1 class="hdr-logo brand-text-primary" role="banner">
-            <a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
-          </h1>
-        {% endif %}
-        {% if site.description %}
-          <p>{{ site.description }}</p>
-        {% endif  %}
-        <p>&copy; {{"now"|date('Y')}} <a href="{{ site.url }}" class="font-weight-bold">{{ site.name }}</a> All rights reserved.</p>
+  <div class="container py-5">
+    <div class="row justify-content-center justify-content-md-between">
+      <div class="col-12 col-md text-center text-md-start">
+        <div class="row justify-content-center justify-content-md-start">
+          <div class="col-6 col-md-4">
+          {% if site_logo %}
+            <img class="img-fluid mb-2" src="{{ site_logo }}" alt="{{site.name}}">
+          {% else %}
+            <h1 class="hdr-logo brand-text-primary" role="banner">
+              <a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
+            </h1>
+          {% endif %}
+          {% if site.description %}
+            <p class="mt-3">{{ site.description }}</p>
+          {% endif  %}
+          </div>
+        </div>
+        <p class="text-primary">&copy; {{"now"|date('Y')}} <a href="{{ site.url }}" class="fw-bold text-decoration-none">{{ site.name }}</a> All rights reserved.</p>
         {% if second_footer_menu %}
-          {% include "partial/footer-inline-menu.twig" with { 'menu': second_footer_menu.get_items, 'menu_id': 'second-footer-menu' } %}
+          <div class="row">
+            <div class="col-12">
+              {% include "partial/footer-inline-menu.twig" with { 'menu': second_footer_menu.get_items, 'menu_id': 'second-footer-menu' } %}
+            </div>
+          </div>
         {% endif %}
       </div>
+       {% if footer_menu %}
+          <div class="col-6 col-md-4">
+            {% include "partial/footer-menu.twig" with { 'menu': footer_menu.get_items, 'menu_id': 'footer-menu' } %}
+          </div>
+        {% endif %}
     </div>
   </div>
 </footer>

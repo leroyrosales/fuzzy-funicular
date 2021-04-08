@@ -2,30 +2,18 @@
 // Footer
 // ----------
 
-// Footer Brandbar
-// ------------
-.ut-footer--brand-bar {
-  p {
-    margin-bottom: 0;
-  }
-
-  .ut-footer--required-links {
-    position: relative;
-    right: 0;
-    top: unset;
-  }
-}
-
-// Footer Nav
+// Second Footer Nav
 // ------------
 footer {
-  nav {
-    li {
-      margin-bottom: 1rem;
-      a,
-      a:link {
-        color: $ut-charcoal;
-      }
+  #footer-menu {
+    column-count: 2;
+    column-gap: .75rem;
+    @media screen and (min-width: 768px) {
+      column-gap: .25rem;
     }
   }
+  #second-footer-menu a {
+    text-decoration: none;
+  }
 }
+

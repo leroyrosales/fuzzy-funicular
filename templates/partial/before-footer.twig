@@ -1,14 +1,14 @@
-<section class="before-footer">
+<section class="before-footer d-none d-md-block">
   <div class="container">
     <div class="row">
       <div class="col-12 d-flex justify-content-center">
 
         {% if before_footer_section.0.button %}
-          <a class="btn btn-secondary rounded-none" href="{{ before_footer_section.0.button.url }}" target="{{ before_footer_section.0.button.target ? '_self' : '_blank' }}">{{ before_footer_section.0.button.title }}</a>
+          <a class="btn btn-lg btn-secondary px-5 py-3 rounded-none" href="{{ before_footer_section.0.button.url }}" target="{{ before_footer_section.0.button.target ? '_self' : '_blank' }}">{{ before_footer_section.0.button.title }}</a>
         {% endif %}
 
         {% if before_footer_section.1.button %}
-          <a class="btn btn-tertiary rounded-none" href="{{ before_footer_section.1.button.url }}" target="{{ before_footer_section.1.button.target ? '_self' : '_blank' }}">{{ before_footer_section.1.button.title }}</a>
+          <a class="btn btn-lg btn-tertiary px-5 py-3 rounded-none" href="{{ before_footer_section.1.button.url }}" target="{{ before_footer_section.1.button.target ? '_self' : '_blank' }}">{{ before_footer_section.1.button.title }}</a>
         {% endif %}
 
       </div>
