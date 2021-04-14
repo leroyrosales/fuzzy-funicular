@@ -1,6 +1,6 @@
 {
     "key": "group_6067849d889a7",
-    "title": "Flex Content",
+    "title": "Flex Full Layout Content",
     "fields": [
         {
             "key": "field_606786d51e5ab",
@@ -530,5 +530,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1617659657
+    "modified": 1618359282
 }
