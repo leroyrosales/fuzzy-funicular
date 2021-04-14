@@ -1,0 +1,11 @@
+{# 32 x 9 ratio #}
+<figure>
+  <picture>
+      <source media="(min-width: 800px)" srcset="{{ post.thumbnail.src | resize(1280, 360, 'center') }} 1200w">
+      <source media="(min-width: 450px)" srcset="{{ post.thumbnail.src | resize(800, 225, 'center') }} 600w">
+      <source srcset="{{ post.thumbnail.src | resize(450, 253.13, 'center') }}">
+      <img loading="lazy" class="img-fluid w-100 mb-2" 
+      src="{{ post.thumbnail.src | resize(450, 253.13, 'center') }}" 
+      alt="{{ post.thumbnail.alt ?: post.thumbnail.title }}">
+  </picture>
+</figure>

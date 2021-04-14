@@ -2,6 +2,10 @@
 
 {% block content %}
 
+	{% if post.thumbnail %}
+		{% include "partial/hero-area.twig" %}
+	{% endif %}
+
 	<div class="content-wrapper">
 		<div class="container pt-3 pb-5">
 			<div class="row">
