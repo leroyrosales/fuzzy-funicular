@@ -40,7 +40,19 @@ add_filter( 'timber_context', function ( $context ) {
 	$context['sidebar'] = Timber::get_widgets('sidebar');
 
 	$context['secondary_sidebar'] = Timber::get_widgets('secondary_sidebar');
-	
+
+	// Is default template
+	$context['default_template'] = is_page_template('default');
+
+	// Is secondary template
+	$context['secondary_template'] = is_page_template('page-secondary.php');
+
+	// Is location template
+	$context['location_template'] = is_page_template('page-location.php');
+
+	// Is flex template
+	$context['flex_template'] = is_page_template('page-flex.php');
+
 	return $context;
 
 
