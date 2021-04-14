@@ -511,6 +511,13 @@
                 "operator": "==",
                 "value": "front_page"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-location.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -530,5 +537,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1618359282
+    "modified": 1618367304
 }

@@ -47,6 +47,12 @@ add_filter( 'timber_context', function ( $context ) {
 	// Is secondary template
 	$context['secondary_template'] = is_page_template('page-secondary.php');
 
+	// Is location template
+	$context['location_template'] = is_page_template('page-location.php');
+
+	// Is flex template
+	$context['flex_template'] = is_page_template('page-flex.php');
+
 	return $context;
 
 

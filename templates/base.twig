@@ -4,9 +4,13 @@
 	{% block head %}
 	{% endblock %}
 {% endblock %}
-
+	
 	<body class="{{body_class}}" data-template="base.twig">
 		{% include 'partial/header.twig' %}
+
+		{% if post.thumbnail %}
+			{% include "partial/hero-area.twig" %}
+		{% endif %}
 
 		<section id="content" role="main" class="content-wrapper">
 			{% if title %}<h1>{{title}}</h1>{% endif %}
