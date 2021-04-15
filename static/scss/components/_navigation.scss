@@ -2,64 +2,21 @@
 // Navigation
 // ----------
 
-.main-menu__list-item {
-  align-items: center;
-  max-height: 40px;
-  &.menu-item-has-children {
-    max-height: 100%;
+// Hack to have bootstrap subnav toggle on hover
+@media all and (min-width: 992px) {
+
+  .navbar-toggler {
+    display: none;
   }
-  .main-menu__link--subnav {
-    text-transform: none;
+
+  .collapse:not(.show) {
+    display: block;
   }
-  @media screen and (min-width: 1200px) {
-    .main-menu__link,
-    &.menu-item-has-children>.main-menu__link {
-      padding-bottom: .825rem;
-    }
-  }
+
+	.navbar .nav-item .dropdown-menu{ display: none; }
+	// .navbar .nav-item:hover .nav-link{   }
+	.navbar .nav-item:hover .dropdown-menu{ display: block; }
+	.navbar .nav-item .dropdown-menu{ margin-top:0; }
+
 }
 
-.main-menu__list--subnav {
-  .main-menu__list-item--subnav {
-    margin-bottom: .5625rem;
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-  @media (max-width: 1200px) {
-    &.open {
-      width: 100%;
-      top: 0;
-      background-color: #f2f1ed;
-      position: relative;
-      display: block;
-      max-height: 500px;
-    }
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .dropdown {
-    &:hover {
-      .dropdown-menu {
-        display: block;
-        position: absolute;
-        transform: translate3d(0px, 43px, 0px);
-        top: 0px;
-        left: 0px;
-        will-change: transform;
-      }
-    }
-  }
-}
-
-// : (
-.ut-header #ut-main_menu-wrapper {
-  @media (max-width: 1199px) {
-    top: 5rem;
-    padding-bottom: 1rem;
-  }
-  @media (max-width: 900px) {
-    top: 4.75rem;
-  }
-}
