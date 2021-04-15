@@ -13,7 +13,7 @@
 					{% if item.children %}
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 							{% for child in item.children %}
-								<li><a class="dropdown-item" target="{{ child.target }}" href="{{ child.link }}">{{ child.title }}</a></li>
+								<li class="m-0 h6"><a class="dropdown-item d-block p-3 text-white" target="{{ child.target }}" href="{{ child.link }}">{{ child.title }}</a></li>
 							{% endfor %}
 						</ul>
 					{% endif %}
