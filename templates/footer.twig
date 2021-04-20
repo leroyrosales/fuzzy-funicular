@@ -9,7 +9,7 @@
         <div class="row justify-content-center justify-content-md-start">
           <div class="col-6 col-md-4">
           {% if site_logo %}
-            <img class="img-fluid mb-2" src="{{ site_logo }}" alt="{{site.name}}">
+            <a class="hdr-logo-link" href="{{site.url}}" rel="home"><img class="img-fluid mb-4" src="{{ site_logo }}" alt="{{site.name}}"></a>
           {% else %}
             <h1 class="hdr-logo brand-text-primary" role="banner">
               <a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>

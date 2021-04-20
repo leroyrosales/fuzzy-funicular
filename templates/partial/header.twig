@@ -5,7 +5,7 @@
       <div class="row py-3 justify-content-between">
         <div class="col-12 col-md-3">
           {% if site_logo %}
-            <img class="img-fluid" src="{{ site_logo }}" alt="{{site.name}}">
+            <a class="hdr-logo-link" href="{{site.url}}" rel="home"><img class="img-fluid" src="{{ site_logo }}" alt="{{site.name}}"></a>
           {% else %}
             <h1 class="hdr-logo brand-text-primary" role="banner">
               <a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
