@@ -1,22 +1,33 @@
 <style>
 
-    a {
+    h1,
+    a,
+    #footer-menu a,
+    #second-footer-menu a:hover,
+    #second-footer-menu a:focus {
         color: {{ site_brand_colors_primary }};
     }
 
+    h2,
     a:hover,
-    a:focus {
+    a:focus,
+    .btn-outline-secondary,
+    #second-header-menu a,
+    #second-footer-menu a,
+    .swiper-button-next:after,
+    .swiper-button-prev:after,
+    #footer-menu a:hover,
+    #footer-menu a:focus {
         color: {{ site_brand_colors_secondary }};
     }
 
-    .btn-primary {
-        background-color: {{ site_brand_colors_primary }};
-        border-color: {{ site_brand_colors_primary }};
-    }
-
+    #nav-main li a:hover,
     .btn-secondary {
         background-color: {{ site_brand_colors_secondary }};
-        border-color: {{ site_brand_colors_secondary }};
+    }
+
+    #nav-main li a:hover {
+        transition: all 0.5s;
     }
 
     .btn-tertiary {
@@ -25,21 +36,69 @@
         border-color: {{ site_brand_colors_tertiary }};
     }
 
+    .btn-secondary,
     .btn-outline-secondary {
         border-color: {{ site_brand_colors_secondary }};
-        color: {{ site_brand_colors_secondary }};
     }
 
+    .bg-tertiary {
+        background-color: {{ site_brand_colors_tertiary }};
+    }
+
+    .header {
+        background-color:{{  site_brand_colors_header }};
+    }
+
+    .swiper-container {
+        border-bottom: 5px solid {{ site_brand_colors_secondary }};
+    }
+
+    .hero-area--img {
+        border-bottom: 15px solid {{ site_brand_colors_secondary }};
+    }
+
+    .promo-unit--card-link {
+        background-color:{{ site_brand_colors_secondary|hex2rgba }};
+    }
+
+    .promo-unit--card-link:hover,
+    .promo-unit--card-link:focus {
+        background-color:{{ site_brand_colors_secondary }};
+    }
+
+    .btn-primary,
+    .nav-main,
+    .dropdown-menu,
+    .before-footer {
+        background-color: {{ site_brand_colors_primary }};
+    }
+
+    .btn-primary {
+        border-color: {{ site_brand_colors_primary }};
+    }
+
+    .footer {
+        background-color:{{  site_brand_colors_footer }};
+    }
+
+    #footer-menu a {
+        text-decoration: none;
+    }
+
+    #footer-menu a:hover,
+    #footer-menu a:focus,
+    #second-footer-menu a:hover,
+    #second-footer-menu a:focus {
+        text-decoration: underline;
+    }
+
+    {# Bootstrap Overrides #}
     .bg-primary {
         background-color: {{ site_brand_colors_primary }}!important;
     }
 
     .bg-secondary {
         background-color: {{ site_brand_colors_secondary }}!important;
-    }
-
-    .bg-tertiary {
-        background-color: {{ site_brand_colors_tertiary }};
     }
 
     .bg-light {
@@ -56,78 +115,6 @@
 
     .text-secondary {
         color: {{ site_brand_colors_secondary }}!important;
-    }
-
-    .header {
-        background-color:{{  site_brand_colors_header }};
-    }
-
-    #second-header-menu a {
-        color: {{ site_brand_colors_secondary }};
-    }
-
-    .nav-main {
-        background-color: {{ site_brand_colors_primary }};
-    }
-
-    #nav-main li a:hover {
-        background-color: {{ site_brand_colors_secondary }};
-        transition: all 0.5s;
-    }
-
-    .dropdown-menu {
-        background-color: {{ site_brand_colors_primary }};
-    }
-
-    .swiper-container {
-        border-bottom: 5px solid {{ site_brand_colors_secondary }};
-    }
-
-    .swiper-button-next:after,
-    .swiper-button-prev:after {
-        color: {{ site_brand_colors_secondary }};
-    }
-
-    .hero-area--img {
-        border-bottom: 15px solid {{ site_brand_colors_secondary }};  
-    }
-
-    .promo-unit--card-link {
-        background-color:{{ site_brand_colors_secondary|hex2rgba }};
-    }
-
-    .promo-unit--card-link:hover,
-    .promo-unit--card-link:focus {
-        background-color:{{ site_brand_colors_secondary }};
-    }
-
-    .before-footer {
-        background-color: {{ site_brand_colors_primary }};
-    }
-
-    .footer {
-        background-color:{{  site_brand_colors_footer }};
-    }
-
-    #footer-menu a {
-        color: {{ site_brand_colors_primary }};
-        text-decoration: none;
-    }
-
-    #footer-menu a:hover,
-    #footer-menu a:focus {
-        color: {{ site_brand_colors_secondary }};
-        text-decoration: underline;
-    }
-
-    #second-footer-menu a {
-        color: {{ site_brand_colors_secondary }};
-    }
-
-    #second-footer-menu a:hover,
-    #second-footer-menu a:focus {
-        color: {{ site_brand_colors_primary }};
-        text-decoration: underline;
     }
 
 </style>
