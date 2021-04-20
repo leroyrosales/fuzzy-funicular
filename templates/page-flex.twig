@@ -3,13 +3,15 @@
 {% block content %}
 
     {% if flex_template %}
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-10 mt-1 mb-3 pt-1 pb-3">
-                    <h1 class="article-h1 pt-5 pb-4 text-primary text-center border-bottom">{{post.title}}</h1>
+        <section class="{{ post.title_background }}">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 mt-1 mb-3 pt-1 pb-3">
+                        <h1 class="article-h1 pt-5 pb-4 text-primary text-center border-bottom">{{post.title}}</h1>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     {% endif %}
 
     {% include 'partial/flex-content.twig' %}
