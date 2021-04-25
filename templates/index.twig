@@ -2,10 +2,30 @@
 
 {% block content %}
 
-	{% for post in posts %}
-		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-	{% endfor %}
+	<div class="content-wrapper">
+		<div class="container pb-5">
+			<div class="row">
+				<div class="col-12 mt-1 mb-3 pt-1 pb-3">
+					<h1 class="article-h1 pt-5 pb-4 text-primary text-center border-bottom">{{ post.title }}</h1>
+				</div>
+			</div>
+		</div>
+		<section class="bg-light py-5">
+			<div class="row justify-content-center">
+				<div class="col-12 col-md-6 mt-1 pt-1 pb-2">
+					<div class="post-type-{{ post.post_type }}" id="post-{{post.ID}}">
+						<div class="article-body">
+							{% for post in posts %}
+								{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+							{% endfor %}
 
-	{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+							{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
 
 {% endblock %}
