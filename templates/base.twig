@@ -8,7 +8,7 @@
 	<body class="{{body_class}}" data-template="base.twig">
 		{% include 'partial/header.twig' %}
 
-		{% if post.thumbnail %}
+		{% if post.thumbnail and fn('is_page') %}
 			{% include "partial/hero-area.twig" %}
 		{% endif %}
 

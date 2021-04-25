@@ -53,6 +53,10 @@ add_filter( 'timber_context', function ( $context ) {
 	// Is flex template
 	$context['flex_template'] = is_page_template('page-flex.php');
 
+	// Post page title
+	$context['page_for_posts_title'] = get_the_title( get_option('page_for_posts', true) );
+	$context['page_for_posts_link'] = get_permalink( get_option('page_for_posts', true) );
+
 	return $context;
 
 
