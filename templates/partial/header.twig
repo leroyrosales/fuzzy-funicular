@@ -18,11 +18,11 @@
         <div class="col-12 col-md-6 text-md-end">
 
           {% if header_ctas.0.button %}
-            <a class="btn bg-body border-secondary rounded-none text-uppercase text-secondary mb-3" href="{{ header_ctas.0.button.url }}" target="{{ header_ctas.0.button.target ? '_self' : '_blank' }}">{{ header_ctas.0.button.title }}</a>
+            <a class="btn bg-body border-secondary rounded-none text-uppercase text-secondary mb-3" href="{{ header_ctas.0.button.url }}" target="{{ header_ctas.0.button.target ? '_blank' : '_self' }}">{{ header_ctas.0.button.title }}</a>
           {% endif %}
 
           {% if header_ctas.1.button %}
-            <a class="btn btn-secondary rounded-none text-uppercase ms-2 mb-3" href="{{ header_ctas.1.button.url }}" target="{{ header_ctas.1.button.target ? '_self' : '_blank' }}">{{ header_ctas.1.button.title }}</a>
+            <a class="btn btn-secondary rounded-none text-uppercase ms-2 mb-3" href="{{ header_ctas.1.button.url }}" target="{{ header_ctas.1.button.target ? '_blank' : '_self' }}">{{ header_ctas.1.button.title }}</a>
           {% endif %}
 
           {% if second_header_menu %}
