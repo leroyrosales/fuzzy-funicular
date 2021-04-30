@@ -1,8 +1,10 @@
     {% for content in content %}
 
-        {% if content.acf_fc_layout == 'wysiwyg' %}
-          {% if default_template or secondary_template %}
-            {{ content.wysiwyg }}
+      {% if content.acf_fc_layout == 'wysiwyg' %}
+        {% if default_template or secondary_template %}
+            <div class="{% if content.background_color %}{{ content.background_color }} p-3{% endif %}">
+              {{ content.wysiwyg }}
+            </div>
           {% else %}
             <section class="{{ content.background_color }}">
                 <div class="container">
@@ -130,5 +132,15 @@
                   </div>
                 </div>
             </section>
+        {% endif %}
+        {% if content.acf_fc_layout == 'lists_column' %}
+          {% for list in content.lists %}
+            {{ list.list_title }}
+            <ul>
+            {% for item in list.list_items %}
+              <li>{{ item.item }}</li>
+            {% endfor %}
+            </li>
+          {% endfor %}
         {% endif %}
     {% endfor %}
