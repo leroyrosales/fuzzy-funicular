@@ -10,7 +10,7 @@
 				</div>
 			</div>
 			<section class="row article-content">
-				{% if sidebar %}
+				{% if sidebar or secondary_sidebar %}
 					{% if default_template %}
 						{% include "sidebar.twig" with { 'sidebar': sidebar } %}
 					{% else %}
