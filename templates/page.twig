@@ -9,8 +9,8 @@
 					<h1 class="article-h1 pt-5 pb-4 text-primary text-center border-bottom">{{post.title}}</h1>
 				</div>
 			</div>
-			<section class="row article-content">
-				{% if sidebar %}
+			<section class="row justify-content-between article-content">
+				{% if sidebar or secondary_sidebar %}
 					{% if default_template %}
 						{% include "sidebar.twig" with { 'sidebar': sidebar } %}
 					{% else %}
