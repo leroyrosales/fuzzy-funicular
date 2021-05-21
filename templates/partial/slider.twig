@@ -5,16 +5,16 @@
         {% for slide in slider %}
             <style>
                 .swiper-slide--{{loop.index}} {
-                    background-image:url({{ Image(slide).src|resize(600) }});
+                    background-image:url({{ Image(slide).src|resize(600, 'top') }});
                 }
                 @media screen and (min-width: 900px) {
                     .swiper-slide--{{loop.index}} {
-                        background-image: url("{{ Image(slide).src|resize(1200) }}");
+                        background-image: url("{{ Image(slide).src|resize(1200, 514.29, 'top') }}");
                     }
                 }
                 @media screen and (min-width: 1200px) {
                     .swiper-slide--{{loop.index}} {
-                        background-image: url("{{ Image(slide).src|resize(1600) }}");
+                        background-image: url("{{ Image(slide).src|resize(1600, 685.71, 'top') }}");
                     }
                 }
             </style>
