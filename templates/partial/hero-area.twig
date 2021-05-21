@@ -2,10 +2,10 @@
 <figure class="hero-area m-0">
   <picture>
       <source media="(min-width: 800px)" srcset="{{ post.thumbnail.src | resize(1280, 360, 'center') }} 1200w">
-      <source media="(min-width: 450px)" srcset="{{ post.thumbnail.src | resize(800, 225, 'center') }} 600w">
+      <source media="(min-width: 450px)" srcset="{{ post.thumbnail.src | resize(800, 360, 'center') }} 600w">
       <source srcset="{{ post.thumbnail.src | resize(450, 253.13, 'center') }}">
-      <img loading="lazy" class="hero-area--img img-fluid w-100" 
-      src="{{ post.thumbnail.src | resize(450, 253.13, 'center') }}" 
+      <img loading="lazy" class="hero-area--img img-fluid w-100"
+      src="{{ post.thumbnail.src | resize(450, 253.13, 'center') }}"
       alt="{{ post.thumbnail.alt ?: post.thumbnail.title }}">
   </picture>
 </figure>
