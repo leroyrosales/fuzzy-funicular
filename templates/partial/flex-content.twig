@@ -1,146 +1,140 @@
     {% for content in content %}
 
       {% if content.acf_fc_layout == 'wysiwyg' %}
-        {% if default_template or secondary_template %}
-            <div class="{% if content.background_color %}{{ content.background_color }} p-3{% endif %}">
-              {{ content.wysiwyg }}
-            </div>
-          {% else %}
-            <section class="{{ content.background_color }}">
-                <div class="container">
-                    <div class="row py-4 justify-content-center">
-                        <div class="col-12">
-                            {{ content.wysiwyg }}
-                        </div>
-                    </div>
-                </div>
-            </section>
-          {% endif %}
-        {% endif %}
-        {% if content.acf_fc_layout == 'promo_units' %}
-            <section class="{{ content.background_color }}">
-                <div class="container">
-                    <div class="row py-5 text-center justify-content-center">
-                        <div class="col-12">
-                            <h3 class="text-primary mb-3 fw-bolder">{{ content.headline }}</h3>
-                            <span class="lead">{{ content.text }}</span>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center">
-                      <div class="col-12">
-                        <div class="row">
-                          {% for promo in content.promo %}
-                            <div class="col-12 col-md">
-                              <div class="promo-unit--card card text-center border-0 mb-4 mb-md-0">
-                                <picture>
-                                  <source media="(min-width: 800px)" srcset="{{ promo.image.url | resize(900, 500, 'center', 'center') }} 1000w">
-                                  <source media="(min-width: 450px)" srcset="{{ promo.image.url | resize(675, 375, 'center', 'center') }} 600w">
-                                  <img class="promo-unit--card-img card-img-top img-fluid"  src="{{ promo.image.url | resize(450, 250, 'center', 'center') }}" alt="{{ promo.image.alt ?: promo.image.title }}">
-                                </picture>
-                                <span class="promo-unit--card-link py-3">
-                                  <a class="h4 stretched-link" href="{{ promo.link.url }}" target="{{ promo.link.target }}">{{ promo.link.title }}</a>
-                                </span>
-                              </div>
-                            </div>
-                          {% endfor %}
-                        </div>
-                      </div>
-                    </div>
-                </div>
-            </section>
-        {% endif %}
-        {% if content.acf_fc_layout == 'banner' %}
-            <section class="{{ content.background_color }}">
-                <div class="container py-5">
-                  <div class="row justify-content-center">
+        <section class="{{ content.background_color }}">
+            <div class="container">
+                <div class="row py-4 justify-content-center">
                     <div class="col-12">
-                      <div class="row bg-primary px-3 py-5 justify-content-center align-items-center">
-                        <div class="col-12 {{ content.link ? 'col-lg-8' : '' }}">
-                          {% if secondary_headline_location == 'below' %}
-                            <h3 class="h1 m-0 text-white fw-bold">{{ content.headline }}</h3>
-                            <h4 class="h3 text-secondary">{{ content.secondary_headline }}</h4>
-                          {% else %}
-                            <h4 class="h3 text-secondary">{{ content.secondary_headline }}</h4>
-                            <h3 class="h1 m-0 text-white fw-bold">{{ content.headline }}</h3>
-                          {% endif %}
-                        </div>
-                        {% if content.link %}
-                          <div class="col-12 col-lg mt-4 mt-lg-0">
-                            <a class="btn btn-lg d-block btn-secondary" href="{{ content.link.url }}" target="{{ content.link.target }}">{{ content.link.title }}</a>
-                          </div>
-                        {% endif %}
-                        </div>
-                      </div>
-                  </div>
+                        {{ content.wysiwyg }}
+                    </div>
                 </div>
-            </section>
-        {% endif %}
-        {% if content.acf_fc_layout == 'cta' %}
-            <section class="{{ content.background_color }}">
-                <div class="container py-5">
-                  {% if content.headline %}
-                    <div class="row mb-3 text-center justify-content-center">
-                      <div class="col-12 col-md-6">
-                          <h3 class="h4 text-primary">{{ content.headline }}</h3>
+            </div>
+        </section>
+      {% endif %}
+      {% if content.acf_fc_layout == 'promo_units' %}
+          <section class="{{ content.background_color }}">
+              <div class="container">
+                  <div class="row py-5 text-center justify-content-center">
+                      <div class="col-12">
+                          <h3 class="text-primary mb-3 fw-bolder">{{ content.headline }}</h3>
+                          <span class="lead">{{ content.text }}</span>
                       </div>
-                    </div>
-                  {% endif %}
-                  {% if content.text %}
-                    <div class="row mb-4 text-center justify-content-center">
-                      <div class="col-12 col-md-6 lead">
-                        {{ content.text }}
-                      </div>
-                    </div>
-                  {% endif %}
-                  {% if content.links %}
-                    <div class="row mt-4 text-center justify-content-center">
-                      <div class="col-12 col-md-3">
-                        {% for link in content.links %}
-                          <a class="btn btn-lg d-block btn-outline-secondary" href="{{ link.link.url }}" target="{{ link.link.target }}">{{ link.link.title }}</a>
-                        {% endfor %}
-                      </div>
-                    </div>
-                  {% endif %}
-                </div>
-            </section>
-        {% endif %}
-        {% if content.acf_fc_layout == 'services' %}
-            <section class="{{ content.background_color }}">
-                <div class="container py-5">
-                  <div class="row justify-content-center">
-                    <div class="col-12 mt-1 pt-1 pb-2">
-                      <h2 class="article-h1 pt-5 pb-4 text-primary text-center border-bottom">{{ content.title }}</h2>
-                    </div>
-                  </div>
-                  <div class="row justify-content-center">
-                    <div class="col-12 mt-0 mb-3 pt-1 pb-3">
-                      <p class="lead">{{ content.text }}</p>
-                    </div>
                   </div>
                   <div class="row justify-content-center">
                     <div class="col-12">
                       <div class="row">
-                        {% for column in content.columns %}
-                          <div class="col-12 col-md text-center">
-                            <h4>{{ column.title }}</h4>
-                            <div class="lead mb-3">{{ column.text }}</div>
-                            <a class="h4" href="{{ column.link.url }}">{{ column.link.title }} &rarr;</a>
+                        {% for promo in content.promo %}
+                          <div class="col-12 col-md">
+                            <div class="promo-unit--card card text-center border-0 mb-4 mb-md-0">
+                              <picture>
+                                <source media="(min-width: 800px)" srcset="{{ promo.image.url | resize(900, 500, 'center', 'center') }} 1000w">
+                                <source media="(min-width: 450px)" srcset="{{ promo.image.url | resize(675, 375, 'center', 'center') }} 600w">
+                                <img class="promo-unit--card-img card-img-top img-fluid"  src="{{ promo.image.url | resize(450, 250, 'center', 'center') }}" alt="{{ promo.image.alt ?: promo.image.title }}">
+                              </picture>
+                              <span class="promo-unit--card-link py-3">
+                                <a class="h4 stretched-link" href="{{ promo.link.url }}" target="{{ promo.link.target }}">{{ promo.link.title }}</a>
+                              </span>
+                            </div>
                           </div>
                         {% endfor %}
                       </div>
                     </div>
                   </div>
+              </div>
+          </section>
+      {% endif %}
+      {% if content.acf_fc_layout == 'banner' %}
+          <section class="{{ content.background_color }}">
+              <div class="container py-5">
+                <div class="row justify-content-center">
+                  <div class="col-12">
+                    <div class="row bg-primary px-3 py-5 justify-content-center align-items-center">
+                      <div class="col-12 {{ content.link ? 'col-lg-8' : '' }}">
+                        {% if secondary_headline_location == 'below' %}
+                          <h3 class="h1 m-0 text-white fw-bold">{{ content.headline }}</h3>
+                          <h4 class="h3 text-secondary">{{ content.secondary_headline }}</h4>
+                        {% else %}
+                          <h4 class="h3 text-secondary">{{ content.secondary_headline }}</h4>
+                          <h3 class="h1 m-0 text-white fw-bold">{{ content.headline }}</h3>
+                        {% endif %}
+                      </div>
+                      {% if content.link %}
+                        <div class="col-12 col-lg mt-4 mt-lg-0">
+                          <a class="btn btn-lg d-block btn-secondary" href="{{ content.link.url }}" target="{{ content.link.target }}">{{ content.link.title }}</a>
+                        </div>
+                      {% endif %}
+                      </div>
+                    </div>
                 </div>
-            </section>
-        {% endif %}
-        {% if content.acf_fc_layout == 'lists_column' %}
-          {% for list in content.lists %}
-            {{ list.list_title }}
-            <ul>
-            {% for item in list.list_items %}
-              <li>{{ item.item }}</li>
-            {% endfor %}
-            </li>
+              </div>
+          </section>
+      {% endif %}
+      {% if content.acf_fc_layout == 'cta' %}
+          <section class="{{ content.background_color }}">
+              <div class="container py-5">
+                {% if content.headline %}
+                  <div class="row mb-3 text-center justify-content-center">
+                    <div class="col-12 col-md-6">
+                        <h3 class="h4 text-primary">{{ content.headline }}</h3>
+                    </div>
+                  </div>
+                {% endif %}
+                {% if content.text %}
+                  <div class="row mb-4 text-center justify-content-center">
+                    <div class="col-12 col-md-6 lead">
+                      {{ content.text }}
+                    </div>
+                  </div>
+                {% endif %}
+                {% if content.links %}
+                  <div class="row mt-4 text-center justify-content-center">
+                    <div class="col-12 col-md-3">
+                      {% for link in content.links %}
+                        <a class="btn btn-lg d-block btn-outline-secondary" href="{{ link.link.url }}" target="{{ link.link.target }}">{{ link.link.title }}</a>
+                      {% endfor %}
+                    </div>
+                  </div>
+                {% endif %}
+              </div>
+          </section>
+      {% endif %}
+      {% if content.acf_fc_layout == 'services' %}
+          <section class="{{ content.background_color }}">
+              <div class="container py-5">
+                <div class="row justify-content-center">
+                  <div class="col-12 mt-1 pt-1 pb-2">
+                    <h2 class="article-h1 pt-5 pb-4 text-primary text-center border-bottom">{{ content.title }}</h2>
+                  </div>
+                </div>
+                <div class="row justify-content-center">
+                  <div class="col-12 mt-0 mb-3 pt-1 pb-3">
+                    <p class="lead">{{ content.text }}</p>
+                  </div>
+                </div>
+                <div class="row justify-content-center">
+                  <div class="col-12">
+                    <div class="row">
+                      {% for column in content.columns %}
+                        <div class="col-12 col-md text-center">
+                          <h4>{{ column.title }}</h4>
+                          <div class="lead mb-3">{{ column.text }}</div>
+                          <a class="h4" href="{{ column.link.url }}">{{ column.link.title }} &rarr;</a>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </section>
+      {% endif %}
+      {% if content.acf_fc_layout == 'lists_column' %}
+        {% for list in content.lists %}
+          {{ list.list_title }}
+          <ul>
+          {% for item in list.lists_items %}
+            <li>{{ item.item }}</li>
           {% endfor %}
-        {% endif %}
+          </ul>
+        {% endfor %}
+      {% endif %}
     {% endfor %}
