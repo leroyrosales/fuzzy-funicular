@@ -27,8 +27,8 @@ function wpb_customize_register($wp_customize){
 
   // Brand Colors Section
   $wp_customize->add_section('site_brand_colors', array(
-    'title'   => __( 'Site Colors' ),
-    'description' => sprintf(__( 'Options for site colors' )),
+    'title'   => __( 'Brand Colors' ),
+    'description' => sprintf(__( 'Colors for site branding' )),
     'priority'    => 60
   ));
 
@@ -132,13 +132,74 @@ function wpb_customize_register($wp_customize){
     $wp_customize->add_control(
       new WP_Customize_Color_Control(
       $wp_customize,
-      'foote_area_color',
+      'footer_area_color',
       array(
           'label'      => __( 'Footer Color' ),
           'section'    => 'site_brand_colors',
           'settings'   => 'site_brand_colors_footer',
           'priority'  => 6
     ) ) );
+
+  // Button Colors Section
+  $wp_customize->add_section('site_button_colors', array(
+    'title'   => __( 'Button Colors' ),
+    'description' => sprintf(__( 'Colors for site buttons' )),
+    'priority'    => 70
+  ));
+
+  // Primary button color
+  $wp_customize->add_setting('site_primary_button_color', array(
+    'default' => '#003d7d',
+    'sanitize_callback' => 'sanitize_hex_color',
+    'type'      => 'theme_mod'
+  ));
+
+  $wp_customize->add_control(
+    new WP_Customize_Color_Control(
+    $wp_customize,
+    'primary_button_color',
+    array(
+        'label'      => __( 'Primary Button' ),
+        'section'    => 'site_button_colors',
+        'settings'   => 'site_primary_button_color',
+        'priority'  => 1
+  ) ) );
+
+  // Secondary button color
+  $wp_customize->add_setting('site_secondary_button_color', array(
+    'default' => '#00a7e1',
+    'sanitize_callback' => 'sanitize_hex_color',
+    'type'      => 'theme_mod'
+  ));
+
+  $wp_customize->add_control(
+    new WP_Customize_Color_Control(
+    $wp_customize,
+    'secondary_button_color',
+    array(
+        'label'      => __( 'Secondary Button' ),
+        'section'    => 'site_button_colors',
+        'settings'   => 'site_secondary_button_color',
+        'priority'  => 2
+  ) ) );
+
+  // Tertiary button color
+  $wp_customize->add_setting('site_tertiary_button_color', array(
+    'default' => '#99dcf3',
+    'sanitize_callback' => 'sanitize_hex_color',
+    'type'      => 'theme_mod'
+  ));
+
+  $wp_customize->add_control(
+    new WP_Customize_Color_Control(
+    $wp_customize,
+    'tertiary_button_color',
+    array(
+        'label'      => __( 'Tertiary Button' ),
+        'section'    => 'site_button_colors',
+        'settings'   => 'site_tertiary_button_color',
+        'priority'  => 3
+  ) ) );
 
 }
 
@@ -201,6 +262,27 @@ add_filter( 'timber/context', function( $context ) {
   );
 
   $context['site_brand_colors_footer'] = $site_brand_colors_footer;
+
+  $site_primary_button_color = get_theme_mod(
+    'site_primary_button_color',
+    '#003d7d'
+  );
+
+  $context['site_primary_button_color'] = $site_primary_button_color;
+
+  $site_secondary_button_color = get_theme_mod(
+    'site_secondary_button_color',
+    '#00a7e1'
+  );
+
+  $context['site_secondary_button_color'] = $site_secondary_button_color;
+
+  $site_tertiary_button_color = get_theme_mod(
+    'site_tertiary_button_color',
+    '#99dcf3'
+  );
+
+  $context['site_tertiary_button_color'] = $site_tertiary_button_color;
 
   return $context;
 
