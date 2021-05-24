@@ -19,12 +19,14 @@
                 }
             </style>
             <!-- Slides -->
-            <div class="swiper-slide swiper-slide--{{loop.index}}">
-                <div class="swiper-slide--img-overlay d-flex flex-column  justify-content-center">
-                    <div class="p-5 ps-lg-5 ms-2 ms-lg-5">
-                        <h2 class="card-title text-secondary">{{ slide.title }}</h2>
-                        <p class="d-none d-md-block card-text lead fw-normal">{{ slide.text }}</p>
-                        <a class="btn btn-lg btn-outline-secondary" href="{{ slide.cta.url }}">{{ slide.cta.title }}</a>
+            <div class="swiper-slide swiper-slide--{{loop.index}} d-flex">
+                <div class="container d-flex">
+                    <div class="row swiper-slide--img-overlay flex-column  justify-content-center">
+                        <div class="col-12 col-md-8 py-5">
+                            <h2 class="card-title text-secondary">{{ slide.title }}</h2>
+                            <p class="d-none d-md-block card-text lead fw-normal">{{ slide.text }}</p>
+                            <a class="btn btn-lg btn-outline-secondary" href="{{ slide.cta.url }}">{{ slide.cta.title }}</a>
+                        </div>
                     </div>
                 </div>
             </div>
