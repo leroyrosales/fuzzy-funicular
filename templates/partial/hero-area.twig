@@ -9,10 +9,12 @@
       alt="{{ post.thumbnail.alt ?: post.thumbnail.title }}">
   </picture>
   {% if post.hero_area_content %}
-    <div class="container position-absolute">
-      <div class="row">
-        <div class="col-12 col-md-6">
-          {{ post.hero_area_content }}
+    <div class="position-absolute w-100">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            {{ post.hero_area_content }}
+          </div>
         </div>
       </div>
     </div>
