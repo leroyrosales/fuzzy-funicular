@@ -1,5 +1,5 @@
 {# 32 x 9 ratio #}
-<figure class="hero-area m-0">
+<figure class="hero-area m-0 position-relative d-flex align-items-center">
   <picture>
       <source media="(min-width: 800px)" srcset="{{ post.thumbnail.src | resize(1280, 360, 'center') }} 1200w">
       <source media="(min-width: 450px)" srcset="{{ post.thumbnail.src | resize(800, 360, 'center') }} 600w">
@@ -8,4 +8,14 @@
       src="{{ post.thumbnail.src | resize(450, 253.13, 'center') }}"
       alt="{{ post.thumbnail.alt ?: post.thumbnail.title }}">
   </picture>
+  {% if post.hero_area_content %}
+    <div class="container position-absolute">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          {{ post.hero_area_content }}
+        </div>
+      </div>
+    </div>
+  {% endif %}
 </figure>
+
