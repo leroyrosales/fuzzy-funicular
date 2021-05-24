@@ -11,6 +11,30 @@
             </div>
         </section>
       {% endif %}
+      {% if content.acf_fc_layout == 'column_wysiwyg' %}
+        <section class="{{ content.background_color }}">
+            {% if content.column_split == 'half_half' %}
+              {% set left_column = "col-md-6" %}
+              {% set right_column = "col-md-6" %}
+            {% elseif content.column_split == 'two_thirds_one_third' %}
+              {% set left_column = "col-md-8" %}
+              {% set right_column = "col-md-4" %}
+            {% elseif content.column_split == 'one_third_two_thirds' %}
+              {% set left_column = "col-md-4" %}
+              {% set right_column = "col-md-8" %}
+            {% endif %}
+            <div class="container">
+                <div class="row py-4 justify-content-center">
+                    <div class="col-12 {{ left_column }}">
+                        {{ content.wysiwyg_one }}
+                    </div>
+                    <div class="col-12 {{ right_column }}">
+                        {{ content.wysiwyg_two }}
+                    </div>
+                </div>
+            </div>
+        </section>
+      {% endif %}
       {% if content.acf_fc_layout == 'promo_units' %}
           <section class="{{ content.background_color }}">
               <div class="container">
