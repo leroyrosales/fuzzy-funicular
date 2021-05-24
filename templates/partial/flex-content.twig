@@ -125,29 +125,42 @@
       {% if content.acf_fc_layout == 'services' %}
           <section class="{{ content.background_color }}">
               <div class="container py-5">
+                {% if content.title %}
                 <div class="row justify-content-center">
                   <div class="col-12 mt-1 pt-1 pb-2">
                     <h2 class="article-h1 pt-5 pb-4 text-primary text-center border-bottom">{{ content.title }}</h2>
                   </div>
                 </div>
+                {% endif %}
+                {% if content.text %}
                 <div class="row justify-content-center">
                   <div class="col-12 mt-0 mb-3 pt-1 pb-3">
                     <p class="lead">{{ content.text }}</p>
                   </div>
                 </div>
-                <div class="row justify-content-center">
-                  <div class="col-12">
-                    <div class="row">
-                      {% for column in content.columns %}
-                        <div class="col-12 col-md text-center">
+                {% endif %}
+                {% if content.columns %}
+                  <div class="row justify-content-center">
+                    {% for column in content.columns %}
+                      <div class="col-6 col-md-2 mb-3 text-center">
+                        {% if column.image %}
+                          <picture>
+                            <img class="img-fluid" src="{{ column.image.url }}" alt="{{ content.image.alt ?: content.image.title }}">
+                          </picture>
+                        {% endif %}
+                        {% if column.title %}
                           <h4>{{ column.title }}</h4>
+                        {% endif %}
+                        {% if column.text %}
                           <div class="lead mb-3">{{ column.text }}</div>
+                        {% endif %}
+                        {% if column.link %}
                           <a class="h4" href="{{ column.link.url }}">{{ column.link.title }} &rarr;</a>
-                        </div>
-                      {% endfor %}
-                    </div>
+                        {% endif %}
+                      </div>
+                    {% endfor %}
                   </div>
-                </div>
+                {% endif %}
               </div>
           </section>
       {% endif %}
