@@ -1,6 +1,6 @@
 {% if menu %}
 
-	<ul class="list-unstyled text-center m-0 p-0 d-flex">
+	<ul class="navbar-collapse list-unstyled text-center m-0 p-0 d-flex">
 	{% for item in menu %}
 		<li class="nav-item flex-fill m-0 h5 {% if item.children %}dropdown{% endif %} {{ item.classes | join(' ') }}">
 			<a class="nav-link d-block p-3 text-center text-white text-decoration-none {% if item.children %}dropdown-toggle{% endif %}" target="{{ item.target }}" href="{{ item.link }}" {% if item.children %}id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"{% endif %}>{{ item.title }}</a>
