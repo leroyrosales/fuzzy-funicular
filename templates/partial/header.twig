@@ -16,13 +16,13 @@
           {% endif  %}
         </div>
         {% if mobile_menu %}
-        <div class="d-block d-md-none col text-end">
+        <div class="d-block d-lg-none col text-end">
           <button class="navbar-toggler" id="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobileMenu" aria-controls="navbarMobileMenu" aria-expanded="false" aria-label="Toggle navigation">
             <i class="display-4 fa fa-bars"></i>
           </button>
         </div>
         {% endif %}
-        <div class="d-none d-md-block col-md-6 text-md-end">
+        <div class="d-none d-lg-block col-md-6 text-md-end">
 
           {% if header_ctas.0.button %}
             <a class="btn bg-body border-secondary rounded-none text-uppercase text-secondary mb-3" href="{{ header_ctas.0.button.url }}" target="{{ header_ctas.0.button.target ? '_blank' : '_self' }}">{{ header_ctas.0.button.title }}</a>
