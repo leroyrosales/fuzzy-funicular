@@ -4,6 +4,7 @@
     .menu-sidebar-menu-container {
         font-size: 1.25rem;
         ul.menu {
+            padding: 0;
             list-style: none;
             li {
                 padding-bottom: .5rem;
@@ -26,5 +27,9 @@
                 margin-bottom: 0;
             }
         }
+    }
+    @media (max-width: 900px) {
+        border-top: 1px solid $gray-300;
+        padding-top: 1.5rem;
     }
 }

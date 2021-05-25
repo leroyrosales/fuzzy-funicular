@@ -21,13 +21,6 @@
           </div>
         </div>
         <p class="text-primary"><small>&copy; {{"now"|date('Y')}} <a href="{{ site.url }}" class="fw-bold text-decoration-none">{{ site.name }}</a> All rights reserved.</small></p>
-        {% if second_footer_menu %}
-          <div class="row">
-            <div class="col-12">
-              {% include "partial/footer-inline-menu.twig" with { 'menu': second_footer_menu.get_items, 'menu_id': 'second-footer-menu' } %}
-            </div>
-          </div>
-        {% endif %}
       </div>
        {% if footer_menu %}
           <div class="col-12 col-md-4">
@@ -35,5 +28,14 @@
           </div>
         {% endif %}
     </div>
+
+    {% if second_footer_menu %}
+      <div class="row">
+        <div class="col-12 col-md-8">
+          {% include "partial/footer-inline-menu.twig" with { 'menu': second_footer_menu.get_items, 'menu_id': 'second-footer-menu' } %}
+        </div>
+      </div>
+    {% endif %}
+
   </div>
 </footer>
