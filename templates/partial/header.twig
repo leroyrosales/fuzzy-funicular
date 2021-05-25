@@ -15,11 +15,13 @@
             <p class="m-0">{{ site.description }}</p>
           {% endif  %}
         </div>
+        {% if mobile_menu %}
         <div class="d-block d-md-none col text-end">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" id="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobileMenu" aria-controls="navbarMobileMenu" aria-expanded="false" aria-label="Toggle navigation">
             <i class="display-4 fa fa-bars"></i>
           </button>
         </div>
+        {% endif %}
         <div class="d-none d-md-block col-md-6 text-md-end">
 
           {% if header_ctas.0.button %}
@@ -45,12 +47,14 @@
   {% endblock %}
 </header>
 
-	<nav class="collapse navbar-collapse d-lg-none" id="navbarSupportedContent">
-		<ul>
-      {% for item in second_header_menu.get_items|slice(0,3) %}
-        <li class="text-decoration-none {% if not loop.last %}border-secondary border-end pe-2{% endif %} {{ item.classes | join(' ') }}">
+{% if mobile_menu %}
+	<nav class="navbar--mobile-menu d-lg-none position-fixed" id="navbarMobileMenu" style="left: -80vw">
+		<ul class="list-unstyled p-5">
+      {% for item in mobile_menu.get_items %}
+        <li class="text-decoration-none">
           <a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
         </li>
       {% endfor %}
 		</ul>
 	</nav>
+{% endif %}
