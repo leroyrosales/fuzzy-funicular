@@ -174,4 +174,37 @@
           </ul>
         {% endfor %}
       {% endif %}
+      {% if content.acf_fc_layout == 'table' %}
+        <section>
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <h3>{{ content.table.headline }}</h3>
+                <div class="table-responsive">
+                  <table class="table {{ content.table.table_classes }}">
+                      {% if content.table.table.header is not empty %}
+                          <thead>
+                            <tr>
+                              {% for cell in content.table.table.header %}
+                                <th>{{ cell.c }}</th>
+                              {% endfor %}
+                            </tr>
+                          </thead>
+                      {% endif %}
+                      <tbody>
+                        {% for row in content.table.table.body %}
+                          <tr>
+                              {% for cell in row %}
+                              <td>{{ cell.c }}</td>
+                              {% endfor %}
+                          </tr>
+                      {% endfor %}
+                      </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      {% endif %}
     {% endfor %}
