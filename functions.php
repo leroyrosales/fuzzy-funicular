@@ -85,6 +85,7 @@ class StarterSite extends Timber\Site {
 				'second_header_menu'  => __( 'Second Header Menu', 'border_beagle' ),
 				'footer_menu'  => __( 'Footer Menu', 'border_beagle' ),
 				'second_footer_menu'  => __( 'Second Footer Menu', 'border_beagle' ),
+				'mobile_menu'  => __( 'Mobile Menu', 'border_beagle' ),
 			)
 		);
 	}
@@ -103,6 +104,9 @@ class StarterSite extends Timber\Site {
 		}
 		if( has_nav_menu( 'second_footer_menu' ) ) {
 			$context['second_footer_menu'] = new TimberMenu('second_footer_menu');
+		}
+		if( has_nav_menu( 'mobile_menu' ) ) {
+			$context['mobile_menu'] = new TimberMenu('mobile_menu');
 		}
 		$context['site']  = $this;
 		return $context;

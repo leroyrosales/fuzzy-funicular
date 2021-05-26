@@ -21,8 +21,7 @@
         color: {{ site_brand_colors_secondary }};
     }
 
-    #nav-main li a:hover,
-    .btn-secondary {
+    #nav-main li a:hover {
         background-color: {{ site_brand_colors_secondary }};
     }
 
@@ -32,11 +31,15 @@
 
     .btn-tertiary {
         color: #fff;
-        background-color: {{ site_brand_colors_tertiary }};
-        border-color: {{ site_brand_colors_tertiary }};
+        background-color: {{ site_tertiary_button_color }};
+        border-color: {{ site_tertiary_button_color }};
     }
 
-    .btn-secondary,
+    .btn-secondary {
+        background-color: {{ site_secondary_button_color }};
+        border-color: {{ site_secondary_button_color }};
+    }
+
     .btn-outline-secondary {
         border-color: {{ site_brand_colors_secondary }};
     }
@@ -66,7 +69,6 @@
         background-color:{{ site_brand_colors_secondary }};
     }
 
-    .btn-primary,
     .nav-main,
     .dropdown-menu,
     .before-footer {
@@ -74,7 +76,8 @@
     }
 
     .btn-primary {
-        border-color: {{ site_brand_colors_primary }};
+        background-color: {{ site_primary_button_color }};
+        border-color: {{ site_primary_button_color }};
     }
 
     .footer {
@@ -115,6 +118,14 @@
 
     .text-secondary {
         color: {{ site_brand_colors_secondary }}!important;
+    }
+
+    .navbar--mobile-menu {
+        background-color: {{ site_brand_colors_primary }};
+    }
+
+    .navbar-toggler {
+        color: {{ site_brand_colors_primary }};
     }
 
 </style>

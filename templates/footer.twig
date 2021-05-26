@@ -7,7 +7,7 @@
     <div class="row justify-content-center justify-content-md-between">
       <div class="col-12 col-md text-center text-md-start">
         <div class="row justify-content-center justify-content-md-start">
-          <div class="col-6 col-md-4">
+          <div class="col-12 col-md-6">
           {% if site_logo %}
             <a class="hdr-logo-link" href="{{site.url}}" rel="home"><img class="img-fluid mb-4" src="{{ site_logo }}" alt="{{site.name}}"></a>
           {% else %}
@@ -16,24 +16,26 @@
             </h1>
           {% endif %}
           {% if site.description %}
-            <p class="mt-3">{{ site.description }}</p>
+            <p class="mt-3"><small>{{ site.description }}</small></p>
           {% endif  %}
           </div>
         </div>
-        <p class="text-primary">&copy; {{"now"|date('Y')}} <a href="{{ site.url }}" class="fw-bold text-decoration-none">{{ site.name }}</a> All rights reserved.</p>
-        {% if second_footer_menu %}
-          <div class="row">
-            <div class="col-12">
-              {% include "partial/footer-inline-menu.twig" with { 'menu': second_footer_menu.get_items, 'menu_id': 'second-footer-menu' } %}
-            </div>
-          </div>
-        {% endif %}
+        <p class="text-primary"><small>&copy; {{"now"|date('Y')}} <a href="{{ site.url }}" class="fw-bold text-decoration-none">{{ site.name }}</a> All rights reserved.</small></p>
       </div>
        {% if footer_menu %}
-          <div class="col-6 col-md-4">
+          <div class="col-12 col-md-4">
             {% include "partial/footer-menu.twig" with { 'menu': footer_menu.get_items, 'menu_id': 'footer-menu' } %}
           </div>
         {% endif %}
     </div>
+
+    {% if second_footer_menu %}
+      <div class="row">
+        <div class="col-12 col-md-8">
+          {% include "partial/footer-inline-menu.twig" with { 'menu': second_footer_menu.get_items, 'menu_id': 'second-footer-menu' } %}
+        </div>
+      </div>
+    {% endif %}
+
   </div>
 </footer>

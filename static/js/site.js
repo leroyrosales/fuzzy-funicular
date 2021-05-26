@@ -21,23 +21,23 @@
     },
   });
 
-  // Primary Navigation
-  let navToggle = document.getElementById("js-nav-toggle");
-  let navWrapper = document.getElementById("ut-main_menu-wrapper");
+  // Mobile button
+  let navToggler = document.getElementById('navbar-toggler');
+  let mobileNav = document.getElementById('navbarMobileMenu')
 
-  navToggle.addEventListener("click", function() {
-    navWrapper.classList.toggle("active");
+  navToggler.addEventListener('click', (e) => {
+    e.preventDefault()
+    if(mobileNav.style.left === '-80vw') {
+      mobileNav.style.left = 0
+      e.target.classList.remove('fa-bars')
+      e.target.classList.add('fa-times')
+    } else {
+      mobileNav.style.left = '-80vw'
+      e.target.classList.remove('fa-times')
+      e.target.classList.add('fa-bars')
+    }
   })
 
-  // Primary Navigation - mobile
-  let subNavIcon = document.querySelectorAll('.subnav-trigger');
-
-  subNavIcon.forEach(function(icon) {
-    icon.addEventListener("click", function() {
-      icon.classList.toggle("icon--open");
-      icon.nextElementSibling.classList.toggle("open");
-    })
-  })
 
   // Alert Banner
   let AlertBanner = document.getElementById("alert-banner");
@@ -48,12 +48,12 @@
     let closeBanner = document.getElementById("alert-banner__close-btn");
     let bannerText = document.getElementById("alert-banner__text").textContent;
 
-    if (localStorage.getItem("ut-banner-data") != bannerText) {
+    if (localStorage.getItem("embrand-banner-data") != bannerText) {
       // If different, reset hide bar value for local storage.
-      localStorage.setItem("ut-banner", "false");
+      localStorage.setItem("embrand-banner", "false");
     }
 
-    if(localStorage.getItem("ut-banner") == "true") {
+    if(localStorage.getItem("embrand-banner") == "true") {
       // If false, remove the bar container.
       AlertBanner.remove();
     } else {
@@ -63,21 +63,9 @@
 
     closeBanner.addEventListener("click", function() {
       AlertBanner.remove();
-      localStorage.setItem("ut-banner-data", bannerText);
-      localStorage.setItem("ut-banner", "true");
+      localStorage.setItem("embrand-banner-data", bannerText);
+      localStorage.setItem("embrand-banner", "true");
     });
   }
-
-  // Accordions
-  let panels = document.querySelectorAll(".panel");
-
-  panels.forEach(function(panel) {
-    let heading = panel.querySelector(".panel-heading");
-
-    heading.addEventListener("click", function() {
-      heading.classList.toggle("panel-heading--open");
-    });
-
-  });
 
 })(jQuery);

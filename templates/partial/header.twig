@@ -2,8 +2,8 @@
 <header class="header">
   {% block header %}
     <div class="container py-2">
-      <div class="row py-3 justify-content-between">
-        <div class="col-12 col-md-3">
+      <div class="row py-3 justify-content-between align-items-center">
+        <div class="col-9 col-md-4 col-lg-3">
           {% if site_logo %}
             <a class="hdr-logo-link" href="{{site.url}}" rel="home"><img class="img-fluid" src="{{ site_logo }}" alt="{{site.name}}"></a>
           {% else %}
@@ -15,7 +15,14 @@
             <p class="m-0">{{ site.description }}</p>
           {% endif  %}
         </div>
-        <div class="col-12 col-md-6 text-md-end">
+        {% if mobile_menu %}
+        <div class="d-block d-lg-none col text-end">
+          <button class="navbar-toggler" id="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobileMenu" aria-controls="navbarMobileMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="display-4 fa fa-bars"></i>
+          </button>
+        </div>
+        {% endif %}
+        <div class="d-none d-lg-block col-md-6 text-md-end">
 
           {% if header_ctas.0.button %}
             <a class="btn bg-body border-secondary rounded-none text-uppercase text-secondary mb-3" href="{{ header_ctas.0.button.url }}" target="{{ header_ctas.0.button.target ? '_blank' : '_self' }}">{{ header_ctas.0.button.title }}</a>
@@ -32,10 +39,22 @@
         </div>
       </div>
     </div>
-    <nav id="nav-main" class="navbar p-0 bg-primary" role="navigation">
+    <nav id="nav-main" class="navbar p-0 bg-primary d-none d-lg-block" role="navigation">
       <div class="container">
         {% include "partial/menu.twig" with { 'menu': primary_menu.get_items } %}
       </div>
     </nav><!-- #nav -->
   {% endblock %}
 </header>
+
+{% if mobile_menu %}
+	<nav class="navbar--mobile-menu d-lg-none position-fixed" id="navbarMobileMenu" style="left: -80vw">
+		<ul class="list-unstyled p-5">
+      {% for item in mobile_menu.get_items %}
+        <li class="text-decoration-none">
+          <a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+        </li>
+      {% endfor %}
+		</ul>
+	</nav>
+{% endif %}
