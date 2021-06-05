@@ -35,6 +35,33 @@
             </div>
         </section>
       {% endif %}
+      {% if content.acf_fc_layout == 'cutout_wysiwyg' %}
+        <section class="{{ content.background_color }}">
+            <div class="container py-4">
+                <div class="row justify-content-center">
+                  <div class="col-10 px-5 py-4" style="background-color:{{ content.cutout_background }}">
+                    <div class="row">
+                      <div class="col">
+                        <h2 class="text-center">{{ content.title }}</h2>
+                        <hr/>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 col-md">
+                        {{ content.wysiwyg }}
+                      </div>
+                      {% if content.columns == 'two' %}
+                        <div class="col-12 col-md">
+                          {{ content.wysiwyg_two }}
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+
+            </div>
+        </section>
+      {% endif %}
       {% if content.acf_fc_layout == 'promo_units' %}
           <section class="{{ content.background_color }}">
               <div class="container">
