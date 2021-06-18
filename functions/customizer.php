@@ -25,6 +25,23 @@ function wpb_customize_register($wp_customize){
     'priority'  => 1
   )));
 
+  // Site footer logo
+  $wp_customize->add_setting(
+    'site_footer_logo',
+    array(
+      'default' => '',
+      'type' => 'theme_mod',
+      'capability' => 'edit_theme_options'
+    )
+  );
+
+  $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'site_footer_logo', array(
+    'label'   => __('Site Footer Logo'),
+    'section' => 'title_tagline',
+    'settings' => 'site_footer_logo',
+    'priority'  => 1
+  )));
+
   // Brand Colors Section
   $wp_customize->add_section('site_brand_colors', array(
     'title'   => __( 'Brand Colors' ),
@@ -220,6 +237,13 @@ add_filter( 'timber/context', function( $context ) {
   );
 
   $context['site_logo'] = $site_logo;
+
+  $site_footer_logo = get_theme_mod(
+    'site_footer_logo',
+    ''
+  );
+
+  $context['site_footer_logo'] = $site_footer_logo;
 
   $site_brand_colors_header = get_theme_mod(
     'site_brand_colors_header',
