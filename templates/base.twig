@@ -22,12 +22,12 @@
 		</section>
 
 		{% block footer %}
+			{% include 'partial/js-files.twig' %}
 
 			{% include 'footer.twig' %}
 
 			{{ function('wp_footer') }}
 		{% endblock %}
 
-		{% include 'partial/js-files.twig' %}
 	</body>
 </html>
