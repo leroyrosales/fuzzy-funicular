@@ -5,6 +5,9 @@
   const swiper = new Swiper('.swiper-container', {
     // Optional parameters
     direction: 'horizontal',
+    autoplay: {
+      delay: 5000,
+    },
     loop: true,
     pagination: {
       el: '.swiper-pagination',
@@ -25,18 +28,21 @@
   let navToggler = document.getElementById('navbar-toggler');
   let mobileNav = document.getElementById('navbarMobileMenu')
 
-  navToggler.addEventListener('click', (e) => {
-    e.preventDefault()
-    if(mobileNav.style.left === '-80vw') {
-      mobileNav.style.left = 0
-      e.target.classList.remove('fa-bars')
-      e.target.classList.add('fa-times')
-    } else {
-      mobileNav.style.left = '-80vw'
-      e.target.classList.remove('fa-times')
-      e.target.classList.add('fa-bars')
-    }
-  })
+  if(document.body.contains(navToggler)){
+    navToggler.addEventListener('click', (e) => {
+      e.preventDefault()
+      if(mobileNav.style.left === '-80vw') {
+        mobileNav.style.left = 0
+        e.target.classList.remove('fa-bars')
+        e.target.classList.add('fa-times')
+      } else {
+        mobileNav.style.left = '-80vw'
+        e.target.classList.remove('fa-times')
+        e.target.classList.add('fa-bars')
+      }
+    })
+  }
+
 
 
   // Alert Banner
