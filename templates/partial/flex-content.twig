@@ -3,7 +3,7 @@
       {% if content.acf_fc_layout == 'fullwidth_wysiwyg' %}
         <section class="{{ content.background_color }}">
             <div class="container">
-                <div class="row py-4 justify-content-center">
+                <div class="row py-3 justify-content-center">
                     <div class="col-12 {{ content.wysiwyg_width }}">
                         {{ content.wysiwyg }}
                     </div>
@@ -12,10 +12,13 @@
         </section>
       {% endif %}
       {% if content.acf_fc_layout == 'column_wysiwyg' %}
-        <section class="{{ content.background_color }}">
+        <section class="{{ content.background_color }} columns">
             {% if content.column_split == 'half_half' %}
               {% set left_column = "col-md-6" %}
               {% set right_column = "col-md-6" %}
+              {% elseif content.column_split == 'half_half_medium' %}            
+                     {% set left_column = "col-md-5" %}
+                     {% set right_column = "col-md-5" %}
             {% elseif content.column_split == 'two_thirds_one_third' %}
               {% set left_column = "col-md-8" %}
               {% set right_column = "col-md-4" %}
@@ -24,7 +27,7 @@
               {% set right_column = "col-md-8" %}
             {% endif %}
             <div class="container">
-                <div class="row py-4 justify-content-center">
+                <div class="row pt-3 pb-5 justify-content-center">
                     <div class="col-12 {{ left_column }}">
                         {{ content.wysiwyg_one }}
                     </div>
@@ -36,8 +39,8 @@
         </section>
       {% endif %}
       {% if content.acf_fc_layout == 'cutout_wysiwyg' %}
-        <section class="{{ content.background_color }}">
-            <div class="container py-4">
+        <section class="{{ content.background_color }} cutout">
+            <div class="container py-5">
                 <div class="row justify-content-center">
                   <div class="col-10 px-5 py-4" style="background-color:{{ content.cutout_background }}">
                     <div class="row">
@@ -63,16 +66,16 @@
         </section>
       {% endif %}
       {% if content.acf_fc_layout == 'promo_units' %}
-          <section class="{{ content.background_color }}">
+          <section class="{{ content.background_color }} promo-units">
               <div class="container">
-                  <div class="row py-5 text-center justify-content-center">
-                      <div class="col-12">
-                          <h3 class="text-primary mb-3 fw-bolder">{{ content.headline }}</h3>
+                  <div class="row py-4 text-center justify-content-center">
+                      <div class="col-10 px-5">
+                          <h2 class="text-primary mb-3">{{ content.headline }}</h2>
                           <span class="lead">{{ content.text }}</span>
                       </div>
                   </div>
                   <div class="row justify-content-center">
-                    <div class="col-12">
+                    <div class="col-10 px-5 py-4">
                       <div class="row">
                         {% for promo in content.promo %}
                           <div class="col-12 col-md">
@@ -80,7 +83,7 @@
                               <picture>
                                 <source media="(min-width: 800px)" srcset="{{ promo.image.url | resize(900, 500, 'center', 'center') }} 1000w">
                                 <source media="(min-width: 450px)" srcset="{{ promo.image.url | resize(675, 375, 'center', 'center') }} 600w">
-                                <img class="promo-unit--card-img card-img-top img-fluid"  src="{{ promo.image.url | resize(450, 250, 'center', 'center') }}" alt="{{ promo.image.alt ?: promo.image.title }}">
+                                <img class="promo-unit--card-img card-img-top img-fluid"  src="{{ promo.image.url | resize(450, 300, 'center', 'center') }}" alt="{{ promo.image.alt ?: promo.image.title }}">
                               </picture>
                               <span class="promo-unit--card-link py-3">
                                 <a class="h4 stretched-link" href="{{ promo.link.url }}" target="{{ promo.link.target }}">{{ promo.link.title }}</a>
@@ -95,8 +98,8 @@
           </section>
       {% endif %}
       {% if content.acf_fc_layout == 'banner' %}
-          <section class="{{ content.background_color }}">
-              <div class="container py-5">
+          <section class="{{ content.background_color }} banner">
+              <div class="container">
                 <div class="row justify-content-center">
                   <div class="col-12">
                     <div class="row bg-primary px-3 py-5 justify-content-center align-items-center">
@@ -121,8 +124,8 @@
           </section>
       {% endif %}
       {% if content.acf_fc_layout == 'cta' %}
-          <section class="{{ content.background_color }}">
-              <div class="container py-5">
+          <section class="{{ content.background_color }} cta">
+              <div class="container py-3">
                 {% if content.headline %}
                   <div class="row mb-3 text-center justify-content-center">
                     <div class="col-12 col-md-6">
@@ -151,7 +154,7 @@
       {% endif %}
       {% if content.acf_fc_layout == 'services' %}
           <section class="{{ content.background_color }}">
-              <div class="container py-5">
+              <div class="container pt-5 pb-5">
                 {% if content.title %}
                 <div class="row justify-content-center">
                   <div class="col-12 mt-1 pt-1 pb-2">
@@ -162,29 +165,50 @@
                 {% if content.text %}
                 <div class="row justify-content-center">
                   <div class="col-12 mt-0 mb-3 pt-1 pb-3">
-                    <p class="lead">{{ content.text }}</p>
+                    <p class="text-center">{{ content.text }}</p>
                   </div>
                 </div>
                 {% endif %}
                 {% if content.columns %}
                   <div class="row justify-content-center">
                     {% for column in content.columns %}
-                      <div class="col-6 col-md-2 mb-3 text-center">
+                      <div class="col text-center services-list">
                         {% if column.image %}
                           <picture>
-                            <img class="img-fluid" src="{{ column.image.url }}" alt="{{ content.image.alt ?: content.image.title }}">
+                            <img class="service" src="{{ column.image.url }}" alt="{{ content.image.alt ?: content.image.title }}">
                           </picture>
                         {% endif %}
                         {% if column.title %}
-                          <h4>{{ column.title }}</h4>
+                          <h5 class="icon-title">{{ column.title }}</h5>
                         {% endif %}
                         {% if column.text %}
                           <div class="lead mb-3">{{ column.text }}</div>
                         {% endif %}
                         {% if column.link %}
-                          <a class="h4" href="{{ column.link.url }}">{{ column.link.title }} &rarr;</a>
+                          <a class="h6" href="{{ column.link.url }}">{{ column.link.title }} &rarr;</a>
                         {% endif %}
                       </div>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </div>
+          </section>
+      {% endif %}
+      {% if content.acf_fc_layout == 'services_icons' %}
+          <section class="{{ content.background_color }}">
+              <div class="container pt-5 pb-5">
+                {% if content.columns %}
+                  <div class="row justify-content-center">
+                    {% for column in content.columns %}
+                      <div class="col text-center services-icons">
+                        {% if column.image %}
+                          <picture>
+                            <img class="service" src="{{ column.image.url }}" alt="{{ content.image.alt ?: content.image.title }}">
+                          </picture>
+                        {% endif %}
+                        {% if column.title %}
+                          <h5 class="icon-title">{{ column.title }}</h5>
+                        {% endif %}                      </div>
                     {% endfor %}
                   </div>
                 {% endif %}
@@ -202,7 +226,7 @@
         {% endfor %}
       {% endif %}
       {% if content.acf_fc_layout == 'table' %}
-        <section>
+        <section class="tables">
           <div class="container">
             <div class="row">
               <div class="col-12">
