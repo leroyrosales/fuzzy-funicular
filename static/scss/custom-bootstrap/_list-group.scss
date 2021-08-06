@@ -5,14 +5,14 @@
 .list-group-item {
   &.active,
   &.list-group-item-primary {
-    background-color: $ut-burntorange;
-    border-color: $ut-burntorange;
-    color: $ut-white;
+    background-color: $emerus-orange;
+    border-color: $emerus-orange;
+    color: $emerus-white;
   }
 
   &.list-group-item-secondary {
-    background-color: $ut-white;
-    border-color: $ut-burntorange;
-    color: $ut-burntorange;
+    background-color: $emerus-white;
+    border-color: $emerus-orange;
+    color: $emerus-orange;
   }
 }

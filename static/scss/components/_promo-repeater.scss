@@ -8,18 +8,18 @@
     .card-body {
       .ut-h2,
       div {
-        color: $ut-white;
+        color: $emerus-white;
       }
 
       &:hover,
       &:focus {
-        background-color: $ut-white;
+        background-color: $emerus-white;
         border-radius: .3rem;
         text-decoration: none;
 
         div,
         .ut-h2 {
-          color: $ut-burntorange;
+          color: $emerus-orange;
         }
       }
     }
