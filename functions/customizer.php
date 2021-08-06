@@ -65,7 +65,7 @@ function wpb_customize_register($wp_customize){
         'section'    => 'site_brand_colors',
         'settings'   => 'site_brand_colors_header',
         'priority'  => 1
-    ) ) );
+  ) ) );
 
   // Primary Brand color
   $wp_customize->add_setting('site_brand_colors_primary', array(
@@ -217,6 +217,27 @@ function wpb_customize_register($wp_customize){
         'settings'   => 'site_tertiary_button_color',
         'priority'  => 3
   ) ) );
+
+  // Slider timer
+  $wp_customize->add_setting(
+    'slider_timer_settings',
+    array(
+      'default' => '5000',
+      'type' => 'theme_mod',
+      'capability' => 'edit_theme_options'
+    )
+  );
+
+  $wp_customize->add_control( 'slider_timer_settings', array(
+    'label'   => __( 'Slider Timer' ),
+    'description'     => __( 'Enter time in 1000s for seconds. Ex: for a 7 second timer, use 7000.' ),
+    'section' => 'static_front_page',
+    'settings' => 'slider_timer_settings',
+    'priority'  => 10
+  ));
+
+  // Add slider timer variable to js
+  // wp_localize_script( '', 'slider_timer_option' );
 
 }
 
