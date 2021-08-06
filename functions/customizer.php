@@ -236,9 +236,6 @@ function wpb_customize_register($wp_customize){
     'priority'  => 10
   ));
 
-  // Add slider timer variable to js
-  // wp_localize_script( '', 'slider_timer_option' );
-
 }
 
 add_action('customize_register', 'wpb_customize_register');

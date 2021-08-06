@@ -2,28 +2,6 @@
 
   "use strict";
 
-  const swiper = new Swiper('.swiper-container', {
-    // Optional parameters
-    direction: 'horizontal',
-    autoplay: {
-      delay: 5000,
-    },
-    loop: true,
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'progressbar',
-    },
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    // And if we need scrollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
-  });
-
   // Mobile button
   let navToggler = document.getElementById('navbar-toggler');
   let mobileNav = document.getElementById('navbarMobileMenu')
@@ -42,8 +20,6 @@
       }
     })
   }
-
-
 
   // Alert Banner
   let AlertBanner = document.getElementById("alert-banner");
