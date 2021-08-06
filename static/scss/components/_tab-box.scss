@@ -4,32 +4,32 @@
 .nav-tabs {
   .nav-link {
     border-top: 1px solid transparent;
-    border-right: 1px solid $ut-white;
+    border-right: 1px solid $emerus-white;
     border-bottom: none;
-    border-left: 1px solid $ut-white;
-    background-color: $ut-burntorange;
-    color: $ut-white;
+    border-left: 1px solid $emerus-white;
+    background-color: $emerus-orange;
+    color: $emerus-white;
     font-weight: 600;
 
     &:hover,
     &:focus {
-      background-color: $ut-burntorange--s10;
-      border-color: $ut-burntorange--s10 $ut-burntorange--s10;
+      background-color: $emerus-orange--s10;
+      border-color: $emerus-orange--s10 $emerus-orange--s10;
     }
 
     &.active {
-      background-color: $ut-limestone--t20;
-      border-color: $ut-burntorange $ut-burntorange;
+      background-color: $emerus-limestone--t20;
+      border-color: $emerus-orange $emerus-orange;
     }
   }
 }
 
 .tab-content {
-  background-color: $ut-limestone--t20;
-  border-top: 1px solid $ut-burntorange;
-  border-right: 1px solid $ut-burntorange;
-  border-left: 1px solid $ut-burntorange;
-  border-bottom: 1px solid $ut-burntorange;
+  background-color: $emerus-limestone--t20;
+  border-top: 1px solid $emerus-orange;
+  border-right: 1px solid $emerus-orange;
+  border-left: 1px solid $emerus-orange;
+  border-bottom: 1px solid $emerus-orange;
   @media (min-width: 900px) {
     border-top: none;
   }
@@ -49,7 +49,7 @@
   text-align: center;
 
   svg {
-    fill: $ut-white;
+    fill: $emerus-white;
     height: 1rem;
     width: 1rem;
   }
@@ -60,12 +60,12 @@
     position: relative;
 
     a {
-      background-color: $ut-burntorange;
+      background-color: $emerus-orange;
       font-weight: 600;
-      color: $ut-white;
+      color: $emerus-white;
 
       svg {
-        fill: $ut-white;
+        fill: $emerus-white;
         height: 1.25rem;
         width: 1.25rem;
         position: absolute;
@@ -79,12 +79,12 @@
   .panel-heading--open {
     .panel-title {
       a {
-        background-color: $ut-limestone--t20;
-        color: $ut-charcoal;
+        background-color: $emerus-limestone--t20;
+        color: $emerus-charcoal;
       }
 
       svg {
-        fill: $ut-charcoal;
+        fill: $emerus-charcoal;
         transform: rotate(0deg);
       }
     }
