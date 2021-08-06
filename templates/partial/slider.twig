@@ -7,25 +7,40 @@
                 .swiper-slide--{{loop.index}} {
                     background-image:url({{ Image(slide).src|resize(600, 'top') }});
                 }
-                @media screen and (min-width: 900px) {
+                @media screen and (min-width: 2000px) {
                     .swiper-slide--{{loop.index}} {
-                        background-image: url("{{ Image(slide).src|resize(1200, 514.29, 'top') }}");
+                        background-image: url("{{ Image(slide).src|resize(2000, 700, 'top') }}");
                     }
                 }
                 @media screen and (min-width: 1200px) {
                     .swiper-slide--{{loop.index}} {
-                        background-image: url("{{ Image(slide).src|resize(1600, 685.71, 'top') }}");
+                        background-image: url("{{ Image(slide).src|resize(1600, 550, 'top') }}");
+                    }
+                }
+                @media screen and (min-width: 900px) {
+                    .swiper-slide--{{loop.index}} {
+                        background-image: url("{{ Image(slide).src|resize(1200, 420, 'top') }}");
+                    }
+                }
+                @media screen and (min-width: 600px) {
+                    .swiper-slide--{{loop.index}} {
+                        background-image: url("{{ Image(slide).src|resize(1024, 360, 'top') }}");
+                    }
+                }
+                @media screen and (max-width: 480px) {
+                    .swiper-slide--{{loop.index}} {
+                        background-image: url("{{ Image(slide).src|resize(700, 250, 'top') }}");
                     }
                 }
             </style>
             <!-- Slides -->
             <div class="swiper-slide swiper-slide--{{loop.index}} d-flex">
                 <div class="container d-flex">
-                    <div class="row swiper-slide--img-overlay flex-column  justify-content-center">
-                        <div class="col-12 col-md-8 py-5">
-                            <h2 class="card-title text-secondary">{{ slide.title }}</h2>
+                    <div class="row swiper-slide--img-overlay flex-column justify-content-center">
+                        <div class="col-12 col-md-6">
+                            <h1 class="card-title text-primary">{{ slide.title }}</h1>
                             <p class="d-none d-md-block card-text lead fw-normal">{{ slide.text }}</p>
-                            <a class="btn btn-lg btn-outline-secondary" href="{{ slide.cta.url }}">{{ slide.cta.title }}</a>
+                            <a class="btn btn-primary" href="{{ slide.cta.url }}">{{ slide.cta.title }}</a>
                         </div>
                     </div>
                 </div>
